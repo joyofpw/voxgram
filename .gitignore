@@ -1,0 +1,14 @@
+.DS_Store
+*.bak
+*.tmp
+__pycache__
+*.swp
+*.lock
+*.index
+*.pyc
+*.db
+logs/
+env/
+cache/
+sessions/
+files/
