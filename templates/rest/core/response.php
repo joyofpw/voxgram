@@ -44,6 +44,10 @@ class Response {
 
 	public $output;
 
+	public $meta;
+
+	public $data;
+
 	public $error;
 
 	private $gotError;
@@ -73,6 +77,9 @@ class Response {
 
 		$this->clearHeaders = true;
 
+		$this->meta = null;
+
+		$this->data = null;
 	}
 
 	// Calls header_remove() on render if true
@@ -133,6 +140,13 @@ class Response {
 			Header::set($header);
 		}
 		
+		if (isset($this->meta)) {
+			$this->output['_meta'] = $this->meta;
+		}
+
+		if (isset($this->data)) {
+			$this->output['data'] = $this->data;
+		}
 
 		http_response_code($this->responseCode);
 

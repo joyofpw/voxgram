@@ -6,21 +6,22 @@ include_once './rest/login/errors.php';
 
 use Rest\Header as Header;
 use Rest\Response as Response;
+
 use Login\Errors\InvalidCredentials as InvalidCredentials;
 
 $response = new Response();
 
 // Basic Auth
-$username = $sanitizer->text(Header::username());
-$password = $sanitizer->text(Header::password());
+$authUser = $sanitizer->text(Header::username());
+$authPass = $sanitizer->text(Header::password());
 
 $authenticated = false;
 
-if ((isset($username) || $username != '') ||
-		(isset($password) || $password != '')) {
+if ((isset($authUser) || $authUser != '') ||
+		(isset($authPass) || $authPass != '')) {
 
-		if ($username == 'voxgrambot' && 
-			$password == '$2a$06$GBsycchhrya5G9T0lacmeudhZym1dHZIGmHrIQ5dU5WcV1Vca8kAq') {
+		if ($authUser == 'voxgrambot' && 
+			$authPass == '$2a$06$GBsycchhrya5G9T0lacmeudhZym1dHZIGmHrIQ5dU5WcV1Vca8kAq') {
 
 			$authenticated = true;
 

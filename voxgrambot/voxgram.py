@@ -17,6 +17,8 @@ import logging
 
 import requests
 
+import config
+
 from voicefile import VoiceFile
 
 from telegram import ParseMode, InlineQueryResultCachedVoice, InputTextMessageContent
@@ -192,7 +194,7 @@ def delete_sound(bot, update):
 	pass 
 
 # The Process for Creating a New Sound
-TITLE_STATE, DESCRIPTION_STATE, TAGS_STATE, UPLOAD_STATE = range(4)
+TITLE_STATE, DESCRIPTION_STATE, TAGS_STATE, UPLOAD_STATE, TITLE_AGAIN_STATE = range(5)
 
 def new_sound(bot, update):
 	user = update.message.from_user
@@ -275,6 +277,56 @@ def title_step(bot, update):
 
 	return DESCRIPTION_STATE
 
+def title_again_step(bot, update):
+	user = update.message.from_user
+	
+	logger.info("User %s will set the title for the new sound." % user.username)
+
+	voice = voiceForUser(user.username)
+
+	title = update.message.text
+
+	if title == None:
+		title = ""
+
+	logger.debug("Title Given %s" % title)
+	
+	title = title.strip()
+
+	if len(title) < 1:
+		logger.info("User typed a too short title")
+
+		bot.send_message(update.message.chat_id,
+			text = ewarning + "The title is too short.\n" +
+			"Please write a title with at least 1 non whitespace character.\n"
+			)
+
+		return TITLE_AGAIN_STATE
+
+	if len(title) > 50:
+		logger.info("User typed a long title")
+
+		bot.send_message(update.message.chat_id,
+			text = ewarning + "The title is too long.\n" +
+			"Please write a title that contains 50 characters or less.\n"
+			)
+
+		return TITLE_AGAIN_STATE
+
+
+	voice.title = title 
+	logger.info("Voice object changed title %s" % voice)
+
+	logger.info("All validations were ok.")
+
+	bot.send_message(update.message.chat_id,
+					text = ethumbs + " All right, '%s' seems like an awesome title. \n" % title +
+					"\nNow please upload or foward me a voice message"
+					)
+
+	return UPLOAD_STATE
+
+
 def description_step(bot, update):
 	user = update.message.from_user
 	
@@ -355,6 +407,7 @@ def tags_step(bot, update):
 		tags = ""
 	
 	# Clean white space in every tag
+	# and create an array of items
 	tags = [x.strip() for x in tags.split(',')]
 
 	# Truncate long tags
@@ -389,7 +442,9 @@ def tags_step(bot, update):
 
 		return TAGS_STATE
 
-	voice.tags = tags
+	# Convert the array to string again
+	voice.tags = ",".join(tags)
+
 	logger.info("Voice object changed tags %s" % voice)
 
 	logger.info("All validations were ok.")
@@ -447,8 +502,58 @@ def upload_step(bot, update):
 
 	success = False
 
+	params = voice.vars()
 
-	return ConversationHandler.END
+	try:
+		
+		logger.info("Calling Endpoint %s with params %s and auth user %s pass %s" % (config.voices, 
+			params, config.user, config.password))
+
+		response = requests.post(config.voices, data=params, auth=config.auth)
+		
+		logger.info("Got Response")
+
+		logger.debug(response.text)
+
+		if response.ok and response.status_code == 201:
+			success = True
+		else:
+			if response.status_code == 409:
+
+				logger.info("Title Conflict. Should Enter Title Again")
+
+				bot.send_message(update.message.chat_id, 
+				ewarning + "There was a problem uploading the file.\n" +
+				"\nThe title '%s' is already in use" % voice.title +
+				"\n\nPlease write a new title")
+
+				return TITLE_AGAIN_STATE
+
+
+	except Exception as e:
+
+		logger.info("Exception Throwed")
+
+		bot.send_message(update.message.chat_id, 
+			ewarning + "There was a problem uploading the file\nPlease try again")
+
+		logger.critical(e)
+
+		return UPLOAD_STATE
+
+	if success:
+		bot.send_message(update.message.chat_id, 
+			"Jobs Done!, Your sound is ready to be shared\n" +
+			eparty + econfetti + eparty + econfetti + eparty + econfetti)
+
+		return ConversationHandler.END
+
+	else:
+		
+		bot.send_message(update.message.chat_id, 
+			ewarning + "There was a problem uploading the file\nPlease try again")
+
+		return UPLOAD_STATE
 
 def cancel(bot, update):
 	user = update.message.from_user
@@ -486,6 +591,8 @@ def main():
 
 				TAGS_STATE: [MessageHandler([Filters.text], tags_step),
 									CommandHandler('skip', skip_tags_step)],
+
+				TITLE_AGAIN_STATE: [MessageHandler([Filters.text], title_again_step)],
 
 				UPLOAD_STATE: [MessageHandler([Filters.voice], upload_step)]
 			},

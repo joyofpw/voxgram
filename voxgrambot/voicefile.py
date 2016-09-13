@@ -40,9 +40,11 @@ class VoiceFile(persistent.Persistent):
 		self.file_id = file_id
 
 		self.description = description
+		
 		self.tags = tags
-		self.username = username
 
+		self.username = username
+	
 	def voice(self):
 		return InlineQueryResultCachedVoice(id = self.id,
 											title = self.title,
