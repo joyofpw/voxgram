@@ -148,6 +148,11 @@ if (Request::isPost()) {
 
 			$response->data = $object->output;
 
+			$stats = $pages->get('/stats');
+			$stats->of(false);
+			$stats->totalVoiceFiles += 1;
+			$stats->save();
+
 		} catch (\Exception $e) {
 			$response->setError(VoiceCouldNotBeCreated::error());
 			$response->meta['about'] = 'Problem Saving Voice In Database. Probably the user has two voices with the same title.';
