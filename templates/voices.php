@@ -84,7 +84,10 @@ if (Request::isGet()) {
 
 if (Request::isPost()) {
 
-	// {'id': 'cf180f21-8ba5-4c25-888e-5a0cf4a63a82', 'description': 'asdaf', 'tags': ['aasdasdf'], 'file_id': 'AwADAQADtwEAAsRXygMuCtFu2r3QBgI', 'username': 'clsource', 'title': 'asdf', 'type': 'voice'}
+	// {'id': 'cf180f21-8ba5-4c25-888e-5a0cf4a63a82', 
+	// 'description': 'asdaf', 'tags': ['aasdasdf'], 
+	// 'file_id': 'AwADAQADtwEAAsRXygMuCtFu2r3QBgI', 
+	// 'username': 'clsource', 'title': 'asdf', 'type': 'voice'}
 
 	// required
 	$id = (array_key_exists('id', $params) ? 
@@ -103,8 +106,6 @@ if (Request::isPost()) {
 	$description = (array_key_exists('description', $params) ?
 		trim($sanitizer->text($params['description'])) : '');
 
-	var_dump($params['tags']);
-	
 	$tags = (array_key_exists('tags', $params) ?
 		trim($sanitizer->text($params['tags'])) : '');
 
