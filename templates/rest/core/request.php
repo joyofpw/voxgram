@@ -161,7 +161,7 @@ class Request {
     foreach(Request::$types as $type) {
     
       if(Request::is($type)){
-        $currentType = $type;
+        $currentType = strtoupper($type);
         break;
       }
 
@@ -237,5 +237,20 @@ class Request {
       }
 
       return $default;
+  }
+
+  public static function getParam($_name, $_defaultValue = null, $_params = null) {
+
+    $params = $_params;
+    
+    if (!is_array($_params) || $_params == null ) {
+          $params = Request::params();
+    }
+
+    if (!is_string($_name)) {
+      $_name = "";
+    }
+
+    return (array_key_exists($_name, $params) ? $params[$_name] : $_defaultValue);
   }
 }

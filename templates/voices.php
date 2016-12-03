@@ -1,42 +1,29 @@
-<?php
-namespace Processwire;
+<?php namespace ProcessWire;
 
 include_once './rest/voices/voice.php';
 include_once './rest/voices/errors.php';
 
-use Rest\StatusCode as StatusCode;
-use Rest\Method as Method;
-use Rest\Request as Request;
+use \Rest\StatusCode as StatusCode;
+use \Rest\Method as Method;
+use \Rest\Request as Request;
 
-use Rest\Errors\MethodNotAllowed as MethodNotAllowed;
+use \Voices\Errors\VoiceParamsNotFound as VoiceParamsNotFound;
+use \Voices\Errors\VoiceCouldNotBeCreated as VoiceCouldNotBeCreated;
+use \Voices\Errors\VoiceCouldNotBeCreatedEmojiRepeated as VoiceCouldNotBeCreatedEmojiRepeated;
+use \Voices\Errors\VoiceCouldNotBeCreatedLimitExceeded as VoiceCouldNotBeCreatedLimitExceeded;
+use \Voices\Errors\VoiceCouldNotBeCreatedFileIdAlreadyExists as VoiceCouldNotBeCreatedFileIdAlreadyExists;
 
-use Voices\Errors\VoiceParamsNotFound as VoiceParamsNotFound;
-use Voices\Errors\VoiceCouldNotBeCreated as VoiceCouldNotBeCreated;
+use \Voices\Voice as Voice;
 
-use Voices\Voice as Voice;
-
-$params = Request::params();
-
-$response->allowMethods([Method::POST, Method::GET]);
-
-if (!(Request::isPost() || Request::isGet())) {
-
-	$response->setError(MethodNotAllowed::error());
-	$response->render();
-	exit;
-}
+$response->renderErrorAndExitUnlessTheseMethodsAreUsed([Method::POST, Method::GET]);
 
 if (Request::isGet()) {
 
 	$voices = new PageArray();
 
-	$username = (array_key_exists('username', $params) ? 
-		$sanitizer->selectorValue($params['username']) : 
-		null); 
+	$username = $sanitizer->selectorValue(Request::getParam('username'));
 
-	$query = (array_key_exists('query', $params) ? 
-		$sanitizer->selectorValue($params['query']) : 
-		null); 
+	$query = $sanitizer->selectorValue(Request::getParam('query'));
 
 	if (isset($username) && $username != '') {
 	
@@ -56,14 +43,14 @@ if (Request::isGet()) {
 
 		if (isset($query) && $query != '') {
 
-			$voices = $pages->find("template=voice, fileTitle|about|tags*=$query, limit=50, sort=-created");
+			$voices = $pages->find("template=voice, fileTitle|about|tags*=$query, limit=50, sort=-created, havePublicAccess=1");
 
 			$response->meta['query'] = $query;
 		}
 
 		if ($voices->count() <= 0) {
 
-			$voices = $pages->find("template=voice, limit=50, sort=random");
+			$voices = $pages->find("template=voice, limit=50, sort=random, havePublicAccess=1");
 
 			$response->meta['random'] = true;
 		}
@@ -80,6 +67,8 @@ if (Request::isGet()) {
 	}
 
 	$response->data = $results;
+
+	$response->renderAndExit();
 }
 
 if (Request::isPost()) {
@@ -90,74 +79,140 @@ if (Request::isPost()) {
 	// 'username': 'clsource', 'title': 'asdf', 'type': 'voice'}
 
 	// required
-	$id = (array_key_exists('id', $params) ? 
-		trim($sanitizer->text($params['id'])) : null);
+	$id = trim($sanitizer->text(Request::getParam('id')));
 
-	$file_id = (array_key_exists('file_id', $params) ? 
-		trim($sanitizer->text($params['file_id'])) : null);
+	$file_id = trim($sanitizer->text(Request::getParam('file_id')));
 
-	$username = (array_key_exists('username', $params) ? 
-		trim($sanitizer->text($params['username'])) : null); 
+	$username = trim($sanitizer->text(Request::getParam('username')));
 
-	$title = (array_key_exists('title', $params) ?
-		trim($sanitizer->text($params['title'])) : null);
+	$title = trim($sanitizer->text(Request::getParam('title')));
+
+	$description = trim($sanitizer->text(Request::getParam('description')));
 
 	// optional
-	$description = (array_key_exists('description', $params) ?
-		trim($sanitizer->text($params['description'])) : '');
+	$tags = trim($sanitizer->text(Request::getParam('tags')));
 
-	$tags = (array_key_exists('tags', $params) ?
-		trim($sanitizer->text($params['tags'])) : '');
+	$public = trim($sanitizer->text(Request::getParam('public', true)));
+
+	if ($public == false || $public == 'False') {
+		$public = false;
+	} else {
+		$public = true;
+	}
 
 	// Check Required Params
-	if (!(isset($id) && isset($file_id) && isset($username) && isset($title) &&
-		$id != '' && $file_id != '' && $username != '' && $title != '')) {
+	$params = [
+		'id' => $id,
+		'file_id' => $file_id,
+		'username' => $username,
+		'title' => $title,
+		'description' => $description,
+	];
+
+	$response->renderErrorAndExitIfTheseParamsAreNotFound($params, 
+		VoiceParamsNotFound::error());
+
+	try {
 		
-		$response->setError(VoiceParamsNotFound::error());
+		$telegram_user_page_name = $sanitizer->name($username);
 
-		$response->meta['required'] = ['id', 'file_id', 'username', 'title'];
-		$response->meta['params'] = $params;
+		$telegram_user = $pages->get("name=$telegram_user_page_name");
 
-	} else {
-
-		try {
+		if ($telegram_user instanceof NullPage) {
 			
-			$name = $sanitizer->name("$username-$title");
-
-			$voice = new Page();
+			$telegram_user = new Page();
+			$telegram_user->template = 'telegram-user';
+			$telegram_user->parent = '/voices';
 			
-			$voice->template = 'voice';
-			$voice->parent = '/voices';
-			
-			$voice->name = $name;
-			$voice->save();
+			$telegram_user->name = $telegram_user_page_name;
+			$telegram_user->save();
 
-			$voice->title = $sanitizer->text("$username - $title");
-			$voice->fileTitle = $title;
-			$voice->username = $username;
-			
-			$voice->fileId = $file_id;
-			$voice->about = $description;
-			$voice->tags = $tags;
-			
-			$voice->save();
+			$telegram_user->title = $username;
 
-			$response->responseCode = StatusCode::created();
-
-			$object = new Voice($voice);
-
-			$response->data = $object->output;
-
-			$stats = $pages->get('/stats');
-			$stats->of(false);
-			$stats->totalVoiceFiles += 1;
-			$stats->save();
-
-		} catch (\Exception $e) {
-			$response->setError(VoiceCouldNotBeCreated::error());
-			$response->meta['about'] = 'Problem Saving Voice In Database. Probably the user has two voices with the same title.';
+			$telegram_user->save();
 		}
+
+		$telegram_user->setOutputFormatting(false);
+
+
+		if ($telegram_user->numChildren >= MAX_VOICES) {
+
+			$logger("Limit Exceeded");
+
+			$error = VoiceCouldNotBeCreatedLimitExceeded::error();
+			
+			$response->meta['max_items'] = MAX_VOICES;
+			$response->meta['items'] = $telegram_user->numChildren;
+
+			$response->renderErrorAndExit($error);
+		}
+
+		if(\Helpers\UTF8::char_in_string($description, $telegram_user->usedEmojis)) {
+
+				$logger("Previous Emoji Found $emoji");
+
+				$response->renderErrorAndExit(VoiceCouldNotBeCreatedEmojiRepeated::error());
+		}
+
+		$pageWithTheSameFileId = $telegram_user->children->get("fileId=$file_id");
+
+		if(!($pageWithTheSameFileId == null || $pageWithTheSameFileId instanceof NullPage)) {
+			
+			$logger("The same file id exists $file_id");
+
+			$conflict_page = new Voice($pageWithTheSameFileId);
+
+			$response->meta['conflict_page'] = $conflict_page->output;
+			$response->meta['conflict_file_id'] = $file_id;
+
+			$response->renderErrorAndExit(VoiceCouldNotBeCreatedFileIdAlreadyExists::error());
+		}
+		
+
+		$name = $sanitizer->name("$title");
+
+		$voice = new Page();
+		
+		$voice->template = 'voice';
+		$voice->parent = $telegram_user;
+		
+		$voice->name = $name;
+		$voice->save();
+
+		$voice->title = $sanitizer->text("$title");
+		$voice->fileTitle = $title;
+		$voice->username = $username;
+		
+		$voice->fileId = $file_id;
+		$voice->about = $description;
+		$voice->tags = $tags;
+		$voice->havePublicAccess = $public;
+
+		$voice->save();
+
+		$telegram_user->setOutputFormatting(false);
+		$telegram_user->usedEmojis = $telegram_user->usedEmojis . $description;
+		$telegram_user->save();
+
+		$response->responseCode = StatusCode::created();
+
+		$object = new Voice($voice);
+
+		$response->data = $object->output;
+
+		$stats = $pages->get('/stats');
+		$stats->of(false);
+		$stats->totalVoiceFiles += 1;
+		$stats->save();
+
+		$logger("New Voice File Created for User $username");
+
+		$response->renderAndExit();
+
+	} catch (\Exception $e) {
+
+		$logger($e->getMessage());
+
+		$response->renderErrorAndExit(VoiceCouldNotBeCreated::error());
 	}
 }
-
-$response->render();

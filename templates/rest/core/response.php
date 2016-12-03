@@ -30,15 +30,22 @@ namespace Rest;
 
 include_once __DIR__ . '/mimetypes.php';
 include_once __DIR__ . '/headers.php';
+include_once __DIR__ . '/methods.php';
+include_once __DIR__ . '/request.php';
+include_once __DIR__ . '/errors.php';
 
-use Rest\MimeType as MimeType;
-use Rest\Header as Header;
+use \Rest\MimeType as MimeType;
+use \Rest\Header as Header;
+use \Rest\Method as Method;
+use \Rest\Request as Request;
+use \Rest\Errors\MethodNotAllowed as MethodNotAllowed;
+use \Rest\Errors\BadRequest as BadRequest;
 
 class Response {
 	
 	public $mimeType;
 	
-	public $responseCode;
+	public $code;
 
 	public $headers;
 
@@ -56,6 +63,8 @@ class Response {
 
 	private $clearHeaders;
 
+	private $methods;
+
 	public function __construct($_output = [], $_mimeType = '', $_responseCode = 200, $_headers = []) {
 
 		$this->output = $_output;
@@ -66,7 +75,7 @@ class Response {
 		}
 
 		$this->mimeType = $_mimeType;
-		$this->responseCode = $_responseCode;
+		$this->code = $_responseCode;
 		
 		$this->headers = $_headers;
 
@@ -80,6 +89,8 @@ class Response {
 		$this->meta = null;
 
 		$this->data = null;
+
+		$this->methods = [];
 	}
 
 	// Calls header_remove() on render if true
@@ -110,8 +121,11 @@ class Response {
 		
 		if (is_array($_methods)) {
 			$this->allowMethodsHeader = Header::allow($_methods);
+			$this->methods = $_methods;
 		}
 	}
+
+	// Render Methods
 
 	public function render() {
 
@@ -125,7 +139,7 @@ class Response {
 			
 			$this->mimeType = $this->error->mimeType;
 			
-			$this->responseCode = $this->error->responseCode;
+			$this->code = $this->error->responseCode;
 
 			$this->headers = [];
 
@@ -148,8 +162,64 @@ class Response {
 			$this->output['data'] = $this->data;
 		}
 
-		http_response_code($this->responseCode);
+		http_response_code($this->code);
 
 		echo json_encode($this->output);	
+	}
+
+
+	public function renderErrorAndExit($error) {
+		$this->setError($error);
+		$this->render();
+		exit(1);
+	}
+
+	public function renderAndExit() {
+		$this->render();
+		exit(0);
+	}
+
+	public function renderErrorAndExitUnlessTheseMethodsAreUsed($_methods = []) {
+
+		if (!isset($_methods)) {
+			$_methods = [Method::GET];
+		}
+
+		if (!is_array($_methods)) {
+			$_methods = [$_methods];
+		}
+
+		$this->allowMethods($_methods);
+		
+		$currentRequestMethod = Request::currentType();
+
+		if(!in_array($currentRequestMethod, $this->methods)) {
+			
+			$this->meta['method_used'] = $currentRequestMethod;
+
+			$this->meta['allowed_methods'] = $this->methods;
+
+			$this->renderErrorAndExit(MethodNotAllowed::error());
+		}
+	}
+
+	public function renderErrorAndExitIfTheseParamsAreNotFound($_params = [], $_error = null) {
+
+		if ($_error == null || !is_a($_error, 'JSONError')) {
+			$_error = BadRequest::error();
+		}
+
+		if (is_array($_params)) {
+
+			foreach ($_params as $key => $value) {
+
+				if (!isset($value) || $value == '') {
+					$this->meta['required'] = array_keys($_params);
+					$this->meta['params'] = $_params;
+					$this->renderErrorAndExit($error);
+					break;
+				}
+			}
+		}
 	}
 }

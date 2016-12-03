@@ -43,6 +43,9 @@ interface JSONErrorInterface {
 	public static function error();
 }
 
+class BaseError {
+}
+
 class JSONError {
     
     // The error code number is the same as the status code
@@ -97,9 +100,13 @@ class JSONError {
 		return $output;
 	}
 
+	public function exception() {
+		return new \Exception($this->message, $this->number);
+	}
+
 }
 
-class BadRequest implements JSONErrorInterface {
+class BadRequest extends BaseError implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -115,7 +122,7 @@ class BadRequest implements JSONErrorInterface {
 
 }
 
-class MethodNotAllowed implements JSONErrorInterface {
+class MethodNotAllowed extends BaseError implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -130,7 +137,7 @@ class MethodNotAllowed implements JSONErrorInterface {
 	}
 }
 
-class NotFound implements JSONErrorInterface {
+class NotFound extends BaseError implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -145,7 +152,7 @@ class NotFound implements JSONErrorInterface {
 	}
 }
 
-class Unauthorized implements JSONErrorInterface {
+class Unauthorized extends BaseError implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -160,7 +167,7 @@ class Unauthorized implements JSONErrorInterface {
 	}
 }
 
-class Forbidden implements JSONErrorInterface {
+class Forbidden extends BaseError implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -175,7 +182,7 @@ class Forbidden implements JSONErrorInterface {
 	}
 }
 
-class Conflict implements JSONErrorInterface {
+class Conflict extends BaseError implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -190,7 +197,7 @@ class Conflict implements JSONErrorInterface {
 	}
 }
 
-class NotImplemented implements JSONErrorInterface {
+class NotImplemented extends BaseError implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -206,7 +213,7 @@ class NotImplemented implements JSONErrorInterface {
 }
 
 
-class InternalServerError implements JSONErrorInterface {
+class InternalServerError extends BaseError implements JSONErrorInterface {
 
 	public static function error() {
 		

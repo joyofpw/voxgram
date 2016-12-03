@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 04-09-2016 a las 07:17:55
+-- Tiempo de generación: 03-12-2016 a las 08:17:39
 -- Versión del servidor: 5.6.28
--- Versión de PHP: 7.0.10
+-- Versión de PHP: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -47,8 +47,11 @@ INSERT INTO `caches` (`name`, `data`, `expires`) VALUES
 ('FileCompiler__cb136c5b3f2598e6f1365003650d4ab3', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/404.php","hash":"a8a6843d19f8d0c74b30dff7b57f4286","size":240,"time":1467868914,"ns":"\\\\"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/404.php","hash":"a6baa99386ad291ffb861f92403cbf84","size":417,"time":1467868914}}', '2010-04-08 03:10:10'),
 ('FileCompiler__dde7432d85e487f1eaca6cac9de2277d', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/rest\\/core\\/rest.php","hash":"2bde53116cdd212e7e344f7ab9d29140","size":1655,"time":1467868914,"ns":"Rest"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/rest\\/core\\/rest.php","hash":"2bde53116cdd212e7e344f7ab9d29140","size":1655,"time":1467868914}}', '2010-04-08 03:10:10'),
 ('FileCompiler__ea9b23cb383de5ca6f466aa26098cc67', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/home.php","hash":"c0640fd467b28ec069221270e5de6264","size":102,"time":1472963253,"ns":"Processwire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/home.php","hash":"c0640fd467b28ec069221270e5de6264","size":102,"time":1472963253}}', '2010-04-08 03:10:10'),
-('FileCompiler__87dc7b58ad49805408bab85876a30364', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/_init.php","hash":"a57c629fb576641814605b0aa20dcf6c","size":757,"time":1472962089,"ns":"Processwire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/_init.php","hash":"a57c629fb576641814605b0aa20dcf6c","size":757,"time":1472962089}}', '2010-04-08 03:10:10'),
-('FileCompiler__66c84dd1aa509f9d740a1832f4250174', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/voices.php","hash":"eb1589b517e6c1b28a5be1b58be4d7ee","size":1916,"time":1472965645,"ns":"Processwire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/voices.php","hash":"eb1589b517e6c1b28a5be1b58be4d7ee","size":1916,"time":1472965645}}', '2010-04-08 03:10:10');
+('FileCompiler__87dc7b58ad49805408bab85876a30364', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/_init.php","hash":"c75fcd5a22fe68d96be31c5bd3becf0f","size":931,"time":1480747672,"ns":"Processwire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/_init.php","hash":"c75fcd5a22fe68d96be31c5bd3becf0f","size":931,"time":1480747672}}', '2010-04-08 03:10:10'),
+('FileCompiler__66c84dd1aa509f9d740a1832f4250174', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/voices.php","hash":"644451e3b61869d3bb94fe2e44c9e4e4","size":5455,"time":1480738359,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/voices.php","hash":"644451e3b61869d3bb94fe2e44c9e4e4","size":5455,"time":1480738359}}', '2010-04-08 03:10:10'),
+('FileCompiler__a9e4cefd424935bf9d16529f89a34634', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/voice.php","hash":"3291d7b6ba97917382be3710d8acae46","size":1892,"time":1480747118,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/voice.php","hash":"3291d7b6ba97917382be3710d8acae46","size":1892,"time":1480747118}}', '2010-04-08 03:10:10');
+INSERT INTO `caches` (`name`, `data`, `expires`) VALUES
+('FileCompiler__c367091cad40167de2059b0f2ddf365e', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/telegram-user.php","hash":"b890a412b060e1f02d7880c884d63ba6","size":1011,"time":1480745284,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/telegram-user.php","hash":"b890a412b060e1f02d7880c884d63ba6","size":1011,"time":1480745284}}', '2010-04-08 03:10:10');
 
 -- --------------------------------------------------------
 
@@ -71,6 +74,7 @@ INSERT INTO `fieldgroups` (`id`, `name`) VALUES
 (4, 'role'),
 (5, 'permission'),
 (1, 'home'),
+(101, 'telegram-user'),
 (97, 'voice'),
 (98, 'voices'),
 (99, '404'),
@@ -95,23 +99,26 @@ CREATE TABLE `fieldgroups_fields` (
 
 INSERT INTO `fieldgroups_fields` (`fieldgroups_id`, `fields_id`, `sort`, `data`) VALUES
 (2, 2, 1, NULL),
-(3, 3, 0, NULL),
+(3, 92, 1, NULL),
 (4, 5, 0, NULL),
 (5, 1, 0, NULL),
-(3, 92, 1, NULL),
+(3, 4, 2, NULL),
 (1, 1, 0, NULL),
 (2, 1, 0, NULL),
-(3, 4, 2, NULL),
+(3, 3, 0, NULL),
+(97, 1, 0, NULL),
 (97, 100, 1, '{"required":1,"requiredAttr":1}'),
 (98, 1, 0, NULL),
-(97, 97, 2, '{"required":1,"requiredAttr":1}'),
-(97, 98, 3, '{"required":1,"requiredAttr":1}'),
-(97, 99, 4, '{"required":1,"requiredAttr":1}'),
-(97, 101, 5, '{"required":1,"requiredAttr":1}'),
-(97, 1, 0, NULL),
+(97, 99, 4, '{"label":"Emoji","required":1,"requiredAttr":1}'),
+(97, 101, 5, NULL),
+(97, 103, 6, NULL),
 (99, 1, 0, NULL),
 (100, 1, 0, NULL),
-(100, 102, 1, NULL);
+(97, 97, 2, '{"required":1,"requiredAttr":1}'),
+(97, 98, 3, '{"required":1,"requiredAttr":1}'),
+(100, 102, 1, NULL),
+(101, 1, 0, '{"description":"User name for the telegram user","label":"Username","notes":"title"}'),
+(101, 104, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -144,7 +151,9 @@ INSERT INTO `fields` (`id`, `type`, `name`, `flags`, `label`, `data`) VALUES
 (99, 'FieldtypeTextarea', 'about', 0, 'About', '{"notes":"about","textformatters":["TextformatterEntities"],"inputfieldClass":"InputfieldTextarea","contentType":0,"collapsed":0,"minlength":0,"maxlength":0,"showCount":0,"rows":5,"stripTags":1,"tags":"voice","icon":"file-o"}'),
 (100, 'FieldtypeText', 'fileTitle', 0, 'File Title', '{"description":"Title given by the User","notes":"fileTitle","textformatters":["TextformatterEntities"],"collapsed":0,"minlength":0,"maxlength":2048,"showCount":0,"size":0,"stripTags":1,"tags":"voice","icon":"pencil-square"}'),
 (101, 'FieldtypeText', 'tags', 0, 'Tags', '{"notes":"tags","textformatters":["TextformatterEntities"],"collapsed":0,"minlength":0,"maxlength":2048,"showCount":0,"size":0,"stripTags":1,"tags":"voice","icon":"tags"}'),
-(102, 'FieldtypeFloat', 'totalVoiceFiles', 0, 'Total Voice Files', '{"description":"Total Voice Files Counter For Stats","precision":0,"zeroNotEmpty":0,"collapsed":0,"inputType":"number","size":10,"min":0,"tags":"stats","icon":"hand-spock-o"}');
+(102, 'FieldtypeFloat', 'totalVoiceFiles', 0, 'Total Voice Files', '{"description":"Total Voice Files Counter For Stats","precision":0,"zeroNotEmpty":0,"collapsed":0,"inputType":"number","size":10,"min":0,"tags":"stats","icon":"hand-spock-o"}'),
+(103, 'FieldtypeCheckbox', 'havePublicAccess', 0, 'is Public?', '{"description":"Set the sound as private or public","notes":"havePublicAccess","collapsed":0,"tags":"Site","icon":"key"}'),
+(104, 'FieldtypeText', 'usedEmojis', 0, 'Used Emojis', '{"description":"An Emoji List used by the user","notes":"usedEmojis","collapsed":0,"minlength":0,"maxlength":2048,"showCount":0,"size":0,"tags":"Site","icon":"smile-o"}');
 
 -- --------------------------------------------------------
 
@@ -162,7 +171,39 @@ CREATE TABLE `field_about` (
 --
 
 INSERT INTO `field_about` (`pages_id`, `data`) VALUES
-(1016, 'No HOOOMOOOOOOO');
+(1026, 'caca'),
+(1027, '😞'),
+(1028, '😔'),
+(1029, '😭'),
+(1030, '😞'),
+(1032, '😅'),
+(1033, '😡'),
+(1034, '😃'),
+(1035, '😄'),
+(1036, '😄'),
+(1037, '😄'),
+(1038, '😃'),
+(1039, '😄'),
+(1040, '😄'),
+(1041, '😄'),
+(1042, '❤'),
+(1043, '😏'),
+(1044, '😏'),
+(1045, '😏'),
+(1046, '😏'),
+(1047, '😏'),
+(1048, '😏'),
+(1049, '❤'),
+(1050, '😉'),
+(1051, '😃'),
+(1052, '💋'),
+(1053, '😱'),
+(1054, '😝'),
+(1055, '😖'),
+(1056, '😱'),
+(1057, '😱'),
+(1058, '👌'),
+(1059, '😚');
 
 -- --------------------------------------------------------
 
@@ -198,7 +239,39 @@ CREATE TABLE `field_fileid` (
 --
 
 INSERT INTO `field_fileid` (`pages_id`, `data`) VALUES
-(1016, 'sjdasdnj(#9');
+(1026, 'AwADAQADxwEAAsRXygOg5rei38c20QI'),
+(1027, 'AwADAQADBwIAAsRXygNrLQZbDbRLpgI'),
+(1028, 'AwADAQADCQIAAsRXygMpxrPk2lXaqwI'),
+(1029, 'AwADAQADCgIAAsRXygOqA1TV5M8SMgI'),
+(1030, 'AwADAQADCwIAAsRXygOMcduKX2bANwI'),
+(1032, 'AwADAQADDAIAAsRXygMbgvFdWPtkfAI'),
+(1033, 'AwADAQADDQIAAsRXygNKqQF661FrswI'),
+(1034, 'AwADAQADDgIAAsRXygMzHqgebALOwgI'),
+(1035, 'AwADAQADEAIAAsRXygO8_0P4ZWYLvgI'),
+(1036, 'AwADAQADEQIAAsRXygOgnhsFbUyfigI'),
+(1037, 'AwADAQADFgIAAsRXygMY01AYQ8GF4QI'),
+(1038, 'AwADAQADGAIAAsRXygNTCKYO5-KggQI'),
+(1039, 'AwADAQADGwIAAsRXygM37LmSYeJ5uAI'),
+(1040, 'AwADAQADHAIAAsRXygPnkKMRYzG69AI'),
+(1041, 'AwADAQADHQIAAsRXygMn6pWoIAHJ9gI'),
+(1042, 'AwADAQADKAIAAsRXygMJ48H0bCLnbAI'),
+(1043, 'AwADAQADLQIAAsRXygNZnzc6LcLykwI'),
+(1044, 'AwADAQADLgIAAsRXygN9ZFPuNXESZAI'),
+(1045, 'AwADAQADLwIAAsRXygOt9F2ISQABUL0C'),
+(1046, 'AwADAQADMAIAAsRXygOuh__IoELCXwI'),
+(1047, 'AwADAQADMQIAAsRXygPnLcuugHmaygI'),
+(1048, 'AwADAQADMwIAAsRXygMSepN3xHlifwI'),
+(1049, 'AwADAQADOAIAAsRXygNG58k9WLj8FQI'),
+(1050, 'AwADAQADPAIAAsRXygMygFrjAWy9-gI'),
+(1051, 'AwADAQADPgIAAsRXygPQsSqsnmFnAAEC'),
+(1052, 'AwADAQADQAIAAsRXygMf117SjZK5PgI'),
+(1053, 'AwADAQADQgIAAsRXygP58mtaKxhS2wI'),
+(1054, 'AwADAQADWAIAAsRXygOvPy5InUA8bgI'),
+(1055, 'AwADAQADWgIAAsRXygOdewnU_bu6VwI'),
+(1056, 'AwADAQADWwIAAsRXygO2XJKuRbh4YgI'),
+(1057, 'AwADAQADXAIAAsRXygP5GdoCOdEe2gI'),
+(1058, 'AwADAQADXQIAAsRXygP4zXv__NvYMAI'),
+(1059, 'AwADAQADXgIAAsRXygMmvWB0Kv-ZAAEC');
 
 -- --------------------------------------------------------
 
@@ -216,7 +289,67 @@ CREATE TABLE `field_filetitle` (
 --
 
 INSERT INTO `field_filetitle` (`pages_id`, `data`) VALUES
-(1016, 'No Homo');
+(1026, 'kkk'),
+(1027, 'Caca'),
+(1028, 'caca'),
+(1029, 'caquita2'),
+(1030, 'asdf'),
+(1032, 'asdf'),
+(1033, 'caca'),
+(1034, 'caca'),
+(1035, 'asdf'),
+(1036, 'asdasd23'),
+(1037, 'asdasdf'),
+(1038, '1234'),
+(1039, '1234adf'),
+(1040, 'sdg'),
+(1041, 'asdf'),
+(1042, 'as😬😬'),
+(1043, '🙈'),
+(1044, '😘'),
+(1045, '🐤'),
+(1046, 'asdf'),
+(1047, '😭'),
+(1048, '23sd'),
+(1049, '123123'),
+(1050, '234234'),
+(1051, 'asdfasf'),
+(1052, '13asdf'),
+(1053, '123asdg'),
+(1054, 'Teo leo Si'),
+(1055, '1'),
+(1056, '4335'),
+(1057, '4335'),
+(1058, 'Yeah'),
+(1059, '1234');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `field_havepublicaccess`
+--
+
+CREATE TABLE `field_havepublicaccess` (
+  `pages_id` int(10) UNSIGNED NOT NULL,
+  `data` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `field_havepublicaccess`
+--
+
+INSERT INTO `field_havepublicaccess` (`pages_id`, `data`) VALUES
+(1028, 1),
+(1029, 1),
+(1030, 1),
+(1032, 1),
+(1035, 1),
+(1037, 1),
+(1050, 1),
+(1052, 1),
+(1053, 1),
+(1058, 1),
+(1059, 1);
 
 -- --------------------------------------------------------
 
@@ -343,7 +476,31 @@ CREATE TABLE `field_tags` (
 --
 
 INSERT INTO `field_tags` (`pages_id`, `data`) VALUES
-(1016, 'no, homo, fernando, gnomo');
+(1026, 'caca'),
+(1027, 'sad'),
+(1028, 'caquita'),
+(1029, 'qweiqwe'),
+(1030, 'asdf'),
+(1032, 'asdf'),
+(1033, 'cacasd'),
+(1034, 'caca'),
+(1035, 'asdf'),
+(1036, 'asd'),
+(1037, 'asdf'),
+(1038, 'asdf'),
+(1039, 'asf'),
+(1040, 'asdf'),
+(1041, 'asdf'),
+(1042, 'oaisdj'),
+(1043, 'klklk'),
+(1044, 'klklk'),
+(1045, 'klklk'),
+(1046, 'asdf'),
+(1047, 'asdf'),
+(1048, 'asdf'),
+(1049, 'asdf'),
+(1050, 'asdf'),
+(1054, 'chico migraña,alegale');
 
 -- --------------------------------------------------------
 
@@ -401,8 +558,41 @@ INSERT INTO `field_title` (`pages_id`, `data`) VALUES
 (1013, 'Can view system logs'),
 (1014, 'Can manage system logs'),
 (1015, 'Voices'),
-(1016, 'clsource - no homo'),
-(1017, 'Stats');
+(1033, 'caca'),
+(1017, 'Stats'),
+(1032, 'asdf'),
+(1031, 'clsource'),
+(1030, 'clsource - asdf'),
+(1029, 'clsource - caquita2'),
+(1028, 'clsource - caca'),
+(1027, 'clsource - Caca'),
+(1026, 'clsource - kkk'),
+(1034, 'caca'),
+(1035, 'asdf'),
+(1036, 'asdasd23'),
+(1037, 'asdasdf'),
+(1038, '1234'),
+(1039, '1234adf'),
+(1040, 'sdg'),
+(1041, 'asdf'),
+(1042, 'as😬😬'),
+(1043, '🙈'),
+(1044, '😘'),
+(1045, '🐤'),
+(1046, 'asdf'),
+(1047, '😭'),
+(1048, '23sd'),
+(1049, '123123'),
+(1050, '234234'),
+(1051, 'asdfasf'),
+(1052, '13asdf'),
+(1053, '123asdg'),
+(1054, 'Teo leo Si'),
+(1055, '1'),
+(1056, '4335'),
+(1057, '4335'),
+(1058, 'Yeah'),
+(1059, '1234');
 
 -- --------------------------------------------------------
 
@@ -413,6 +603,24 @@ INSERT INTO `field_title` (`pages_id`, `data`) VALUES
 CREATE TABLE `field_totalvoicefiles` (
   `pages_id` int(10) UNSIGNED NOT NULL,
   `data` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `field_totalvoicefiles`
+--
+
+INSERT INTO `field_totalvoicefiles` (`pages_id`, `data`) VALUES
+(1017, 24);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `field_usedemojis`
+--
+
+CREATE TABLE `field_usedemojis` (
+  `pages_id` int(10) UNSIGNED NOT NULL,
+  `data` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -431,7 +639,39 @@ CREATE TABLE `field_username` (
 --
 
 INSERT INTO `field_username` (`pages_id`, `data`) VALUES
-(1016, 'clsource');
+(1026, 'clsource'),
+(1027, 'clsource'),
+(1028, 'clsource'),
+(1029, 'clsource'),
+(1030, 'clsource'),
+(1032, 'clsource'),
+(1033, 'clsource'),
+(1034, 'clsource'),
+(1035, 'clsource'),
+(1036, 'clsource'),
+(1037, 'clsource'),
+(1038, 'clsource'),
+(1039, 'clsource'),
+(1040, 'clsource'),
+(1041, 'clsource'),
+(1042, 'clsource'),
+(1043, 'clsource'),
+(1044, 'clsource'),
+(1045, 'clsource'),
+(1046, 'clsource'),
+(1047, 'clsource'),
+(1048, 'clsource'),
+(1049, 'clsource'),
+(1050, 'clsource'),
+(1051, 'clsource'),
+(1052, 'clsource'),
+(1053, 'clsource'),
+(1054, 'clsource'),
+(1055, 'clsource'),
+(1056, 'clsource'),
+(1057, 'clsource'),
+(1058, 'clsource'),
+(1059, 'clsource');
 
 -- --------------------------------------------------------
 
@@ -611,8 +851,41 @@ INSERT INTO `pages` (`id`, `parent_id`, `templates_id`, `name`, `status`, `modif
 (1013, 31, 5, 'logs-view', 1, '2016-09-04 01:54:27', 40, '2016-09-04 01:54:27', 40, '2016-09-03 22:54:27', 11),
 (1014, 31, 5, 'logs-edit', 1, '2016-09-04 01:54:27', 40, '2016-09-04 01:54:27', 40, '2016-09-03 22:54:27', 12),
 (1015, 1, 44, 'voices', 1, '2016-09-04 02:06:55', 41, '2016-09-04 02:06:55', 41, '2016-09-03 23:06:55', 3),
-(1016, 1015, 43, 'clsource-titielel', 1, '2016-09-04 04:57:46', 41, '2016-09-04 02:07:33', 41, '2016-09-03 23:08:03', 0),
-(1017, 1, 46, 'stats', 1, '2016-09-04 05:14:36', 41, '2016-09-04 05:14:29', 41, '2016-09-04 02:14:36', 4);
+(1036, 7, 43, '1036.1031.2_asdasd23', 8193, '2016-11-24 00:59:50', 41, '2016-11-24 00:27:53', 40, '2016-11-23 21:27:53', 2),
+(1017, 1, 46, 'stats', 1, '2016-12-03 06:25:56', 40, '2016-09-04 05:14:29', 41, '2016-09-04 02:14:36', 4),
+(1035, 7, 43, '1035.1031.1_asdf', 8193, '2016-11-24 00:59:46', 41, '2016-11-24 00:27:21', 40, '2016-11-23 21:27:21', 1),
+(1034, 7, 43, '1034.1031.0_clsource-caca', 8193, '2016-11-24 00:59:43', 41, '2016-11-23 23:37:33', 40, '2016-11-23 20:37:33', 0),
+(1033, 7, 43, '1033.1031.1_clsource-caca', 8193, '2016-11-23 23:36:53', 41, '2016-11-23 23:34:06', 40, '2016-11-23 20:34:06', 1),
+(1032, 7, 43, '1032.1031.0_clsource-asdf', 8193, '2016-11-23 23:36:49', 41, '2016-11-23 23:30:48', 40, '2016-11-23 20:30:48', 0),
+(1030, 7, 43, '1030.1015.2_clsource-asdf', 8193, '2016-11-23 23:30:14', 41, '2016-11-23 23:17:54', 40, '2016-11-23 20:17:54', 2),
+(1031, 1015, 47, 'clsource', 1, '2016-12-03 06:46:51', 40, '2016-11-23 23:30:48', 40, '2016-11-23 20:30:48', 1),
+(1026, 7, 43, '1026.1015.0_clsource-kkk', 8193, '2016-11-23 22:56:22', 41, '2016-09-13 06:34:28', 40, '2016-09-13 03:34:28', 0),
+(1027, 7, 43, '1027.1015.1_clsource-caca', 8193, '2016-11-23 22:56:35', 41, '2016-11-23 22:38:18', 40, '2016-11-23 19:38:18', 1),
+(1028, 7, 43, '1028.1015.0_clsource-caca', 8193, '2016-11-23 23:33:01', 41, '2016-11-23 22:58:03', 40, '2016-11-23 19:58:03', 0),
+(1029, 7, 43, '1029.1015.1_clsource-caquita2', 8193, '2016-11-23 23:30:10', 41, '2016-11-23 22:59:23', 40, '2016-11-23 19:59:23', 1),
+(1037, 7, 43, '1037.1031.3_asdasdf', 8193, '2016-11-24 00:59:53', 41, '2016-11-24 00:41:56', 40, '2016-11-23 21:41:56', 3),
+(1038, 7, 43, '1038.1031.4_1234', 8193, '2016-11-24 00:59:57', 41, '2016-11-24 00:42:47', 40, '2016-11-23 21:42:47', 4),
+(1039, 7, 43, '1039.1031.5_1234adf', 8193, '2016-11-24 01:00:00', 41, '2016-11-24 00:59:27', 40, '2016-11-23 21:59:27', 5),
+(1040, 7, 43, '1040.1031.0_sdg', 8193, '2016-11-24 15:13:24', 41, '2016-11-24 01:00:56', 40, '2016-11-23 22:00:56', 0),
+(1041, 7, 43, '1041.1031.1_asdf', 8193, '2016-11-24 15:13:26', 41, '2016-11-24 01:01:16', 40, '2016-11-23 22:01:16', 1),
+(1042, 7, 43, '1042.1031.0_as', 8193, '2016-11-24 15:39:22', 41, '2016-11-24 15:17:02', 40, '2016-11-24 12:17:02', 0),
+(1043, 7, 43, '1043.1031.1_2016-11-24-12-35-47', 8193, '2016-11-24 15:39:26', 41, '2016-11-24 15:35:47', 40, '2016-11-24 12:35:47', 1),
+(1044, 7, 43, '1044.1031.2_2016-11-24-12-36-00', 8193, '2016-11-24 15:39:30', 41, '2016-11-24 15:36:00', 40, '2016-11-24 12:36:00', 2),
+(1045, 7, 43, '1045.1031.3_2016-11-24-12-38-37', 8193, '2016-12-01 02:59:45', 41, '2016-11-24 15:38:37', 40, '2016-11-24 12:38:37', 3),
+(1046, 7, 43, '1046.1031.1_asdf', 9217, '2016-12-01 02:59:39', 41, '2016-11-24 15:41:07', 40, '2016-11-24 12:41:07', 1),
+(1047, 7, 43, '1047.1031.2_2016-11-24-12-42-38', 8193, '2016-12-01 02:59:42', 41, '2016-11-24 15:42:38', 40, '2016-11-24 12:42:38', 2),
+(1048, 7, 43, '1048.1031.3_23sd', 8193, '2016-12-01 02:59:49', 41, '2016-11-24 15:50:17', 40, '2016-11-24 12:50:17', 3),
+(1049, 7, 43, '1049.1031.4_123123', 8193, '2016-12-01 02:59:52', 41, '2016-11-24 16:18:14', 40, '2016-11-24 13:18:14', 4),
+(1050, 7, 43, '1050.1031.5_234234', 8193, '2016-12-01 02:59:55', 41, '2016-11-24 16:20:12', 40, '2016-11-24 13:20:12', 5),
+(1051, 7, 43, '1051.1031.6_asdfasf', 8193, '2016-12-01 02:59:59', 41, '2016-11-24 16:59:48', 40, '2016-11-24 13:59:48', 6),
+(1052, 7, 43, '1052.1031.7_13asdf', 8193, '2016-12-01 03:00:02', 41, '2016-11-24 18:53:40', 40, '2016-11-24 15:53:40', 7),
+(1053, 7, 43, '1053.1031.8_123asdg', 8193, '2016-12-01 03:00:07', 41, '2016-11-24 18:55:09', 40, '2016-11-24 15:55:09', 8),
+(1054, 7, 43, '1054.1031.0_teo_leo_si', 8193, '2016-12-01 03:06:58', 41, '2016-12-01 03:02:55', 40, '2016-12-01 00:02:55', 0),
+(1055, 7, 43, '1055.1031.0_1', 8193, '2016-12-01 03:19:12', 41, '2016-12-01 03:09:21', 40, '2016-12-01 00:09:21', 0),
+(1056, 7, 43, '1056.1031.1_4335', 8193, '2016-12-01 03:19:10', 41, '2016-12-01 03:17:42', 40, '2016-12-01 00:17:42', 1),
+(1057, 7, 43, '1057.1031.0_4335', 8193, '2016-12-01 03:50:12', 41, '2016-12-01 03:19:23', 40, '2016-12-01 00:19:23', 0),
+(1058, 7, 43, '1058.1031.1_yeah', 8193, '2016-12-01 03:50:17', 41, '2016-12-01 03:22:32', 40, '2016-12-01 00:22:32', 1),
+(1059, 7, 43, '1059.1031.2_1234', 8193, '2016-12-01 03:50:20', 41, '2016-12-01 03:26:58', 40, '2016-12-01 00:26:58', 2);
 
 -- --------------------------------------------------------
 
@@ -647,9 +920,42 @@ INSERT INTO `pages_access` (`pages_id`, `templates_id`, `ts`) VALUES
 (1013, 2, '2016-09-04 01:54:27'),
 (1014, 2, '2016-09-04 01:54:27'),
 (1015, 1, '2016-09-04 02:06:55'),
-(1016, 1, '2016-09-04 02:07:33'),
+(1034, 2, '2016-11-24 00:59:43'),
 (27, 1, '2016-09-04 02:32:02'),
-(1017, 1, '2016-09-04 05:14:29');
+(1017, 1, '2016-09-04 05:14:29'),
+(1033, 2, '2016-11-23 23:36:53'),
+(1032, 2, '2016-11-23 23:36:49'),
+(1031, 1, '2016-11-23 23:30:48'),
+(1030, 2, '2016-11-23 23:30:14'),
+(1029, 2, '2016-11-23 23:30:10'),
+(1028, 2, '2016-11-23 23:33:01'),
+(1027, 2, '2016-11-23 22:56:35'),
+(1026, 2, '2016-11-23 22:56:22'),
+(1035, 2, '2016-11-24 00:59:46'),
+(1036, 2, '2016-11-24 00:59:50'),
+(1037, 2, '2016-11-24 00:59:53'),
+(1038, 2, '2016-11-24 00:59:57'),
+(1039, 2, '2016-11-24 01:00:00'),
+(1040, 2, '2016-11-24 15:13:24'),
+(1041, 2, '2016-11-24 15:13:26'),
+(1042, 2, '2016-11-24 15:39:22'),
+(1043, 2, '2016-11-24 15:39:26'),
+(1044, 2, '2016-11-24 15:39:30'),
+(1045, 2, '2016-12-01 02:59:46'),
+(1046, 2, '2016-12-01 02:59:39'),
+(1047, 2, '2016-12-01 02:59:42'),
+(1048, 2, '2016-12-01 02:59:49'),
+(1049, 2, '2016-12-01 02:59:52'),
+(1050, 2, '2016-12-01 02:59:55'),
+(1051, 2, '2016-12-01 02:59:59'),
+(1052, 2, '2016-12-01 03:00:02'),
+(1053, 2, '2016-12-01 03:00:07'),
+(1054, 2, '2016-12-01 03:06:58'),
+(1055, 2, '2016-12-01 03:19:12'),
+(1056, 2, '2016-12-01 03:19:10'),
+(1057, 2, '2016-12-01 03:50:12'),
+(1058, 2, '2016-12-01 03:50:17'),
+(1059, 2, '2016-12-01 03:50:20');
 
 -- --------------------------------------------------------
 
@@ -670,7 +976,6 @@ INSERT INTO `pages_parents` (`pages_id`, `parents_id`) VALUES
 (2, 1),
 (3, 1),
 (3, 2),
-(7, 1),
 (22, 1),
 (22, 2),
 (28, 1),
@@ -683,7 +988,8 @@ INSERT INTO `pages_parents` (`pages_id`, `parents_id`) VALUES
 (30, 28),
 (31, 1),
 (31, 2),
-(31, 28);
+(31, 28),
+(1031, 1015);
 
 -- --------------------------------------------------------
 
@@ -713,7 +1019,7 @@ CREATE TABLE `session_login_throttle` (
 --
 
 INSERT INTO `session_login_throttle` (`name`, `attempts`, `last_attempt`) VALUES
-('ninja', 1, 1472954075);
+('ninja', 1, 1480746520);
 
 -- --------------------------------------------------------
 
@@ -740,8 +1046,9 @@ INSERT INTO `templates` (`id`, `name`, `fieldgroups_id`, `flags`, `cache_time`, 
 (4, 'role', 4, 8, 0, '{"noChildren":1,"parentTemplates":[2],"slashUrls":1,"pageClass":"Role","noGlobal":1,"noMove":1,"noTrash":1,"noSettings":1,"noChangeTemplate":1,"nameContentTab":1}'),
 (5, 'permission', 5, 8, 0, '{"noChildren":1,"parentTemplates":[2],"slashUrls":1,"guestSearchable":1,"pageClass":"Permission","noGlobal":1,"noMove":1,"noTrash":1,"noSettings":1,"noChangeTemplate":1,"nameContentTab":1}'),
 (1, 'home', 1, 0, 0, '{"useRoles":1,"noParents":1,"slashUrls":1,"pageLabelField":"fa-home title","compile":3,"modified":1472966179,"ns":"Processwire","roles":[37]}'),
-(43, 'voice', 97, 0, 0, '{"noChildren":1,"parentTemplates":[44],"slashUrls":1,"pageLabelField":"fa-volume-up title","noMove":1,"noChangeTemplate":1,"compile":3,"tags":"voice","modified":1472957860,"ns":"Processwire"}'),
-(44, 'voices', 98, 0, 0, '{"noParents":-1,"childTemplates":[43],"parentTemplates":[1],"allowPageNum":1,"slashUrls":1,"pageLabelField":"fa-volume-up title","noMove":1,"noChangeTemplate":1,"compile":3,"tags":"voice","modified":1472965645,"ns":"Processwire"}'),
+(47, 'telegram-user', 101, 0, 0, '{"childTemplates":[43],"parentTemplates":[44],"slashUrls":1,"pageLabelField":"fa-user title","compile":3,"modified":1480745284,"ns":"ProcessWire"}'),
+(43, 'voice', 97, 0, 0, '{"noChildren":1,"parentTemplates":[44,47],"slashUrls":1,"pageLabelField":"fa-volume-up title","noMove":1,"noChangeTemplate":1,"compile":3,"tags":"voice","modified":1480747118,"ns":"ProcessWire"}'),
+(44, 'voices', 98, 0, 0, '{"noParents":-1,"childTemplates":[43,47],"parentTemplates":[1],"allowPageNum":1,"slashUrls":1,"pageLabelField":"fa-volume-up title","noMove":1,"noChangeTemplate":1,"compile":3,"tags":"voice","modified":1480738359,"ns":"ProcessWire"}'),
 (45, '404', 99, 0, 0, '{"noChildren":1,"noParents":-1,"parentTemplates":[1],"slashUrls":1,"pageLabelField":"fa-exclamation-circle title","compile":3,"modified":1472966113,"ns":"\\\\"}'),
 (46, 'stats', 100, 0, 0, '{"noChildren":1,"noParents":-1,"parentTemplates":[1],"slashUrls":1,"pageLabelField":"fa-area-chart title","noMove":1,"noChangeTemplate":1,"compile":3,"tags":"stats","modified":1472966056}');
 
@@ -810,6 +1117,13 @@ ALTER TABLE `field_filetitle`
 ALTER TABLE `field_filetitle` ADD FULLTEXT KEY `data` (`data`);
 
 --
+-- Indices de la tabla `field_havepublicaccess`
+--
+ALTER TABLE `field_havepublicaccess`
+  ADD PRIMARY KEY (`pages_id`),
+  ADD KEY `data` (`data`);
+
+--
 -- Indices de la tabla `field_pass`
 --
 ALTER TABLE `field_pass`
@@ -859,6 +1173,14 @@ ALTER TABLE `field_title` ADD FULLTEXT KEY `data` (`data`);
 ALTER TABLE `field_totalvoicefiles`
   ADD PRIMARY KEY (`pages_id`),
   ADD KEY `data` (`data`);
+
+--
+-- Indices de la tabla `field_usedemojis`
+--
+ALTER TABLE `field_usedemojis`
+  ADD PRIMARY KEY (`pages_id`),
+  ADD KEY `data_exact` (`data`(191));
+ALTER TABLE `field_usedemojis` ADD FULLTEXT KEY `data` (`data`);
 
 --
 -- Indices de la tabla `field_username`
@@ -929,12 +1251,12 @@ ALTER TABLE `templates`
 -- AUTO_INCREMENT de la tabla `fieldgroups`
 --
 ALTER TABLE `fieldgroups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 --
 -- AUTO_INCREMENT de la tabla `fields`
 --
 ALTER TABLE `fields`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 --
 -- AUTO_INCREMENT de la tabla `modules`
 --
@@ -944,12 +1266,12 @@ ALTER TABLE `modules`
 -- AUTO_INCREMENT de la tabla `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1018;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1063;
 --
 -- AUTO_INCREMENT de la tabla `templates`
 --
 ALTER TABLE `templates`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

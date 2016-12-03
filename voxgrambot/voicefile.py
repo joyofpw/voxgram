@@ -18,7 +18,7 @@ class VoiceFile(persistent.Persistent):
 		tags (str): Tags separated by comma, for improved search results
 		username (str): User who uploaded the voice sound file
 		file_id (str): Id for the voice sound file stored in telegram
-
+		public (bool): Determines if the sound will be public or private
 	Args:
 		title (str):
 		description (str):
@@ -30,10 +30,15 @@ class VoiceFile(persistent.Persistent):
 	def __init__(self, title = "", file_id = "", 
 				description = None, 
 				tags = "", 
-				username = None
+				username = None,
+				emoji = "",
+				public = True,
+				caption = "",
+				url = ""
 				):
 
 		self.id = "%s" % uuid4()
+		
 		self.type = "voice"
 
 		self.title = title
@@ -44,13 +49,21 @@ class VoiceFile(persistent.Persistent):
 		self.tags = tags
 
 		self.username = username
+
+		self.public = public
+
+		self.emoji = emoji
+
+		self.caption = caption
+
+		self.url = url
 	
 	def voice(self):
 		return InlineQueryResultCachedVoice(id = self.id,
 											title = self.title,
 											voice_file_id = self.file_id,
 											type = self.type,
-											input_message_content = self.description
+											caption = self.caption
 											)
 	def vars(self):
 		# Could use vars(self) too
