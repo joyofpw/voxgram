@@ -151,10 +151,10 @@ class Request {
   }
 
   /**
-  * Get current request type
+  * Get current request method
   * @return String
   */
-  public static function currentType() {
+  public static function currentMethod() {
     
     $currentType = null;
 
@@ -168,6 +168,26 @@ class Request {
     }
 
     return $currentType;
+  }
+
+  public static function contentType() {
+    
+    $contentType = '';
+
+    if (array_key_exists('CONTENT_TYPE', $_SERVER) && 
+      isset($_SERVER["CONTENT_TYPE"])) {
+    
+        $contentType = $_SERVER["CONTENT_TYPE"];
+    
+    } else {
+        
+        if (array_key_exists('HTTP_CONTENT_TYPE', $_SERVER) && 
+          isset($_SERVER["HTTP_CONTENT_TYPE"])) {
+            $contentType = $_SERVER['HTTP_CONTENT_TYPE'];
+        }
+    }
+
+    return $contentType;
   }
 
   /**
@@ -239,6 +259,14 @@ class Request {
       return $default;
   }
 
+  /**
+  * Enables getting easily the params.
+  * Also if you got the params previously you can use that array.
+  * If not it fetches the current params with Request::params();
+  *
+  * Example
+  * Request::getParam('username');
+  */
   public static function getParam($_name, $_defaultValue = null, $_params = null) {
 
     $params = $_params;

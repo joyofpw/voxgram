@@ -33,17 +33,21 @@ namespace Rest\Errors;
 include_once __DIR__ . '/mimetypes.php';
 include_once __DIR__ . '/statuscodes.php';
 
-use Rest\MimeType as MimeType;
-use Rest\StatusCode as Status;
+use \Rest\MimeType as MimeType;
+use \Rest\StatusCode as Status;
 
 use function \Processwire\_x as _x;
+use function \Processwire\__ as __;
+
 
 
 interface JSONErrorInterface {
 	public static function error();
 }
 
-class BaseError {
+class JSONException extends \Exception {
+	public $error;
+	public $response;
 }
 
 class JSONError {
@@ -100,13 +104,19 @@ class JSONError {
 		return $output;
 	}
 
-	public function exception() {
-		return new \Exception($this->message, $this->number);
+	public function exception($_response = null) {
+		
+		$exception = new JSONException($this->message, $this->number);
+		
+		$exception->error = $this;
+		$exception->response = $_response;
+
+		return $exception;
 	}
 
 }
 
-class BadRequest extends BaseError implements JSONErrorInterface {
+class BadRequest implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -122,7 +132,7 @@ class BadRequest extends BaseError implements JSONErrorInterface {
 
 }
 
-class MethodNotAllowed extends BaseError implements JSONErrorInterface {
+class MethodNotAllowed implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -137,7 +147,7 @@ class MethodNotAllowed extends BaseError implements JSONErrorInterface {
 	}
 }
 
-class NotFound extends BaseError implements JSONErrorInterface {
+class NotFound implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -152,7 +162,7 @@ class NotFound extends BaseError implements JSONErrorInterface {
 	}
 }
 
-class Unauthorized extends BaseError implements JSONErrorInterface {
+class Unauthorized implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -167,7 +177,7 @@ class Unauthorized extends BaseError implements JSONErrorInterface {
 	}
 }
 
-class Forbidden extends BaseError implements JSONErrorInterface {
+class Forbidden implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -182,7 +192,7 @@ class Forbidden extends BaseError implements JSONErrorInterface {
 	}
 }
 
-class Conflict extends BaseError implements JSONErrorInterface {
+class Conflict implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -197,7 +207,7 @@ class Conflict extends BaseError implements JSONErrorInterface {
 	}
 }
 
-class NotImplemented extends BaseError implements JSONErrorInterface {
+class NotImplemented implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -213,7 +223,7 @@ class NotImplemented extends BaseError implements JSONErrorInterface {
 }
 
 
-class InternalServerError extends BaseError implements JSONErrorInterface {
+class InternalServerError implements JSONErrorInterface {
 
 	public static function error() {
 		
@@ -224,6 +234,31 @@ class InternalServerError extends BaseError implements JSONErrorInterface {
 
 		$error = new JSONError($code, $message, 'kInternalServerError', $info, $number);
 
+		return $error;
+	}
+}
+
+// Special Errors
+class RequestContentTypeMisMatchError extends BadRequest {
+	public static function error() {
+		
+		$error = parent::error();
+		$error->message = __('The Content Type Given in the Request is Not Valid.');
+		$error->info = __('The content type must be changed.');
+		$error->uuid = 'kRequestContentTypeMisMatchError';
+		$error->number = 1000;
+		return $error;
+	}
+}
+
+class InvalidCredentials extends Unauthorized {
+	public static function error() {
+		
+		$error = parent::error();
+		$error->message = __('The credentials you gave were not valid');
+		$error->info = __('User or password were incorrect or wrong format of params.');
+		$error->uuid = 'kLoginInvalidCredentials';
+		$error->number = 1001;
 		return $error;
 	}
 }

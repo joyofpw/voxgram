@@ -6,6 +6,7 @@ include_once './rest/voices/errors.php';
 use \Rest\StatusCode as StatusCode;
 use \Rest\Method as Method;
 use \Rest\Request as Request;
+use \Rest\MimeType as MimeType;
 
 use \Voices\Errors\VoiceParamsNotFound as VoiceParamsNotFound;
 use \Voices\Errors\VoiceCouldNotBeCreated as VoiceCouldNotBeCreated;
@@ -109,8 +110,7 @@ if (Request::isPost()) {
 		'description' => $description,
 	];
 
-	$response->renderErrorAndExitIfTheseParamsAreNotFound($params, 
-		VoiceParamsNotFound::error());
+	$response->renderErrorAndExitIfTheseParamsAreNotFound($params, VoiceParamsNotFound::error());
 
 	try {
 		
@@ -149,7 +149,7 @@ if (Request::isPost()) {
 
 		if(\Helpers\UTF8::char_in_string($description, $telegram_user->usedEmojis)) {
 
-				$logger("Previous Emoji Found $emoji");
+				$logger("Previous Emoji Found $description");
 
 				$response->renderErrorAndExit(VoiceCouldNotBeCreatedEmojiRepeated::error());
 		}
@@ -194,7 +194,7 @@ if (Request::isPost()) {
 		$telegram_user->usedEmojis = $telegram_user->usedEmojis . $description;
 		$telegram_user->save();
 
-		$response->responseCode = StatusCode::created();
+		$response->code = StatusCode::created();
 
 		$object = new Voice($voice);
 

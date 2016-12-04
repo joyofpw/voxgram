@@ -200,6 +200,21 @@ def voiceForUser(username):
 
 # General Functions
 
+def is_private_chat(bot, update):
+
+	if update.message.chat.type == 'private':
+		return True
+	else:
+		logger.info("Chat is not private")
+	
+		bot.send_message(update.message.chat_id,
+						text = "\n" + eskull + \
+						"Sorry, but for using this command you need to send me a private message. " \
+						+ eskull + "\n"
+						)
+	
+		return False
+
 def escape_markdown(text):
     """Helper function to escape telegram markup symbols"""
     escape_chars = '\*_`\['
@@ -277,43 +292,33 @@ def inlinequery(bot, update):
 	except Exception as e:
 		logger.warn(e)
 		bot.answerInlineQuery(update.inline_query.id, results=list())
-	
 
 def new_sound(bot, update):
+
+	if not is_private_chat(bot, update):
+		return ConversationHandler.END
+
 	user = update.message.from_user
 	
 	logger.info("User %s started new sound conversation." % user.username)
 
-	if update.message.chat.type == 'private':
+	bot.send_message(update.message.chat_id,
+					
+					text = "Ok, before adding a new voice message\n" +
+					"I need some basic info.\n\n" +
+					"If you want to stop creating a new sound\n" +
+					"just type /cancel \n\n" +
+					
+					emic + " We will begin creating a new sound.\n\n" +
+					"Do you want to be private or be available to the world?\n\n" +
+					"/private " + emoai + "\n"
+					"/public " + estar + "\n"
+					)
 
-		bot.send_message(update.message.chat_id,
-						
-						text = "Ok, before adding a new voice message\n" +
-						"I need some basic info.\n\n" +
-						"If you want to stop creating a new sound\n" +
-						"just type /cancel \n\n" +
-						
-						emic + " We will begin creating a new sound.\n\n" +
-						"Do you want to be private or be available to the world?\n\n" +
-						"/private " + emoai + "\n"
-						"/public " + estar + "\n"
-						)
+	deleteVoiceForUser(user.username)
 
-		deleteVoiceForUser(user.username)
-
-		return PRIVACY_SELECTION_STATE
-
-	else:
-	
-		logger.info("Chat is not private")
-	
-		bot.send_message(update.message.chat_id,
-						text = "\n" + eskull + \
-						"Sorry, but for creating a new sound you need to send me a private message. " \
-						+ eskull + "\n"
-						)
-	
-		return ConversationHandler.END
+	return PRIVACY_SELECTION_STATE
+		
 
 
 def private_chosen_step(bot, update):
@@ -740,6 +745,10 @@ def uploadVoiceFile(bot, update):
 			success = True
 		else:
 			
+			if response.status_code == 200:
+				logger.info("Wrong status code given")
+				raise Exception("Wrong Status Code")
+
 			data = response.json()
 
 			if data['error']['number'] == 2001:
@@ -838,6 +847,9 @@ def cancel(bot, update):
 
 def stats(bot, update):
 
+	if not is_private_chat(bot, update):
+		return ConversationHandler.END
+
 	user = update.message.from_user
 
 	logger.info("User %s wants to know its stats." % user.username)
@@ -881,6 +893,9 @@ def stats(bot, update):
 
 
 def hear(bot, update):
+
+	if not is_private_chat(bot, update):
+		return ConversationHandler.END
 
 	try:
 		user = update.message.from_user
@@ -976,6 +991,9 @@ def hear(bot, update):
 					)
 
 def delete(bot, update):
+
+	if not is_private_chat(bot, update):
+		return ConversationHandler.END
 
 	try:
 		user = update.message.from_user

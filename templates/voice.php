@@ -61,6 +61,11 @@ if (Request::isDelete()) {
 
 			$logger("Item {$id} deleted by user {$username}");
 
+			$stats = $pages->get('/stats');
+			$stats->of(false);
+			$stats->totalVoiceFiles -= 1;
+			$stats->save();
+
 		} catch (\Exception $e) {
 			$logger($e);
 			$response->renderErrorAndExit(VoiceCouldNotBeDeleted::error());
