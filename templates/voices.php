@@ -22,9 +22,9 @@ if (Request::isGet()) {
 
 	$voices = new PageArray();
 
-	$username = $sanitizer->selectorValue(Request::getParam('username'));
+	$username = $sanitizer->selectorValue(Request::getParam('username', ''));
 
-	$query = $sanitizer->selectorValue(Request::getParam('query'));
+	$query = json_decode($sanitizer->selectorValue(Request::getParam('query', '')));
 
 	if (isset($username) && $username != '') {
 	
@@ -32,12 +32,10 @@ if (Request::isGet()) {
 
 		if(isset($query) && $query != ''){
 			$selector .= ", fileTitle|about|tags*=$query";
-			$response->meta['query'] = $query;
 		}
 
 		$voices = $pages->find($selector);
-	
-		$response->meta['user'] = $username;
+		$response->meta['username'] = $username;
 
 	} else {
 		
@@ -45,8 +43,6 @@ if (Request::isGet()) {
 		if (isset($query) && $query != '') {
 
 			$voices = $pages->find("template=voice, fileTitle|about|tags*=$query, limit=50, sort=-created, havePublicAccess=1");
-
-			$response->meta['query'] = $query;
 		}
 
 		if ($voices->count() <= 0) {
@@ -68,6 +64,8 @@ if (Request::isGet()) {
 	}
 
 	$response->data = $results;
+	$response->meta['query'] = $query;
+	$response->meta['params'] = Request::params();
 
 	$response->renderAndExit();
 }

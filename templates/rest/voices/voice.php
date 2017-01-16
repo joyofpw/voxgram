@@ -1,5 +1,4 @@
-<?php
-namespace Voices;
+<?php namespace Voices;
 /**
 * Holds a Voice Object
 */

@@ -1,5 +1,4 @@
-<?php
-namespace Processwire;
+<?php namespace ProcessWire;
 
 $response->output['data']['message'] = 'Welcome';
 

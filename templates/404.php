@@ -1,4 +1,4 @@
-<?php
+<?php namespace ProcessWire;
 /**
 * 404 Generic Response Error
 */

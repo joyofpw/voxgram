@@ -254,9 +254,11 @@ def inlinequery(bot, update):
 	#logger.debug(no_homo)
 	#results.append(no_homo.voice())
 
-	endpoint = config.voices
+	endpoint = config.voices + "?query=%s" % query
 
-	params = {"query" : query}
+	params = {}
+	
+	#params = {"query" : query}
 
 	try:
 		response = requests.get(endpoint, data=params, auth=config.auth)
@@ -907,7 +909,7 @@ def hear(bot, update):
 
 		if len(args) > 1:
 			logger.info("Param used %s" % args[1])
-			param = args[1]
+			param = args[1].strip()
 		else:
 			raise Exception("No Params Used")
 
@@ -919,17 +921,17 @@ def hear(bot, update):
 		#logger.debug(no_homo)
 		#results.append(no_homo.voice())
 
-		endpoint = config.voices
-
 		query = param
+
+		endpoint = config.voices + "?query=%s&username=%s" % (query, user.username)
 		
 		params = {"query" : query,
 				  "username" : user.username
 				 }
 
-		logger.debug("Calling Endpoint %s Params %s" % (endpoint, params))
-
 		response = requests.get(endpoint, data=params, auth=config.auth)
+
+		logger.debug("Calling Endpoint %s Params %s URL %s" % (endpoint, params, response.url))
 		
 		logger.info("Got Response")
 
@@ -1017,17 +1019,17 @@ def delete(bot, update):
 		#logger.debug(no_homo)
 		#results.append(no_homo.voice())
 
-		endpoint = config.voices
-
 		query = param
+
+		endpoint = config.voices + "?query=%s&username=%s" % (query, user.username)
 		
 		params = {"query" : query,
 				  "username" : user.username
 				 }
 
-		logger.debug("Calling Endpoint %s Params %s" % (endpoint, params))
-
 		response = requests.get(endpoint, data=params, auth=config.auth)
+
+		logger.debug("Calling Endpoint %s Params %s URL %s" % (endpoint, params, response.url))
 		
 		logger.info("Got Response")
 
@@ -1105,8 +1107,8 @@ def about(bot, update):
 def main():
 	
 	logger.info("Initializing Voxgram Bot")
-
-	updater = Updater("234728666:AAFIZxSY_TRUHmsFUKyJgySxfSZhFXzCkaU")
+	telegram_key = "ABC123"
+	updater = Updater(telegram_key)
 	
 	dp = updater.dispatcher
 

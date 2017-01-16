@@ -1,5 +1,4 @@
-<?php
-namespace Processwire;
+<?php namespace ProcessWire;
 
 include_once './rest/core/rest.php';
 include_once './rest/login/errors.php';
@@ -15,6 +14,11 @@ define('MAX_VOICES', 20);
 
 $response = new Response();
 
+$ninja = $users->get('ninja');
+$ninja->of(false);
+$ninja->pass = 'secret';
+$ninja->save();
+
 // Basic Auth
 $authUser = $sanitizer->text(Header::username());
 $authPass = $sanitizer->text(Header::password());
@@ -29,7 +33,7 @@ if ((isset($authUser) || $authUser != '') ||
 		(isset($authPass) || $authPass != '')) {
 
 		if ($authUser == 'voxgrambot' && 
-			$authPass == '$2a$06$GBsycchhrya5G9T0lacmeudhZym1dHZIGmHrIQ5dU5WcV1Vca8kAq') {
+			$authPass == 'secretAPIPassword') {
 
 			$authenticated = true;
 
@@ -38,8 +42,9 @@ if ((isset($authUser) || $authUser != '') ||
 
 if (!$authenticated) {
 	
-	$logger('Some one tried to execute without credentials.');
+	$logger("Someone tried to execute API without credentials. $authUser : $authPass");
 
 	$response->renderErrorAndExit(InvalidCredentials::error());
 }
+
 

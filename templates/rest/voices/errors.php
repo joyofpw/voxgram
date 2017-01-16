@@ -1,5 +1,4 @@
-<?php
-namespace Voices\Errors;
+<?php namespace Voices\Errors;
 /**
 * A Class that contains errors relating to the login process
 */
@@ -10,7 +9,7 @@ use \Rest\Errors\Conflict as Conflict;
 use \Rest\Errors\InternalServerError as InternalServerError;
 use \Rest\Errors\BadRequest as BadRequest;
 
-use function \Processwire\__ as __;
+use function \ProcessWire\__ as __;
 
 class VoiceParamsNotFound extends BadRequest {
 	public static function error() {

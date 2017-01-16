@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 03-12-2016 a las 08:17:39
+-- Tiempo de generación: 16-01-2017 a las 19:37:06
 -- Versión del servidor: 5.6.28
 -- Versión de PHP: 5.6.25
 
@@ -44,14 +44,14 @@ INSERT INTO `caches` (`name`, `data`, `expires`) VALUES
 ('FileCompiler__65ed2ba6b1285ef821390d66cb23af12', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/admin.php","hash":"9636f854995462a4cb877cb1204bc2fe","size":467,"time":1472827686,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/admin.php","hash":"9636f854995462a4cb877cb1204bc2fe","size":467,"time":1472827686}}', '2010-04-08 03:10:10'),
 ('Permissions.names', '{"logs-edit":1014,"logs-view":1013,"page-delete":34,"page-edit":32,"page-edit-recent":1011,"page-lister":1006,"page-lock":54,"page-move":35,"page-sort":50,"page-template":51,"page-view":36,"profile-edit":53,"user-admin":52}', '2010-04-08 03:10:10'),
 ('Modules.info', '{"148":{"name":"AdminThemeDefault","title":"Default","version":14,"autoload":"template=admin","created":1472954036,"configurable":19,"namespace":"ProcessWire\\\\"},"97":{"name":"FieldtypeCheckbox","title":"Checkbox","version":101,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"28":{"name":"FieldtypeDatetime","title":"Datetime","version":104,"created":1472954036,"namespace":"ProcessWire\\\\"},"29":{"name":"FieldtypeEmail","title":"E-Mail","version":100,"created":1472954036,"namespace":"ProcessWire\\\\"},"106":{"name":"FieldtypeFieldsetClose","title":"Fieldset (Close)","version":100,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"105":{"name":"FieldtypeFieldsetOpen","title":"Fieldset (Open)","version":100,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"107":{"name":"FieldtypeFieldsetTabOpen","title":"Fieldset in Tab (Open)","version":100,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"6":{"name":"FieldtypeFile","title":"Files","version":104,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"89":{"name":"FieldtypeFloat","title":"Float","version":105,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"57":{"name":"FieldtypeImage","title":"Images","version":101,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"84":{"name":"FieldtypeInteger","title":"Integer","version":101,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"27":{"name":"FieldtypeModule","title":"Module Reference","version":101,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"4":{"name":"FieldtypePage","title":"Page Reference","version":103,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true},"111":{"name":"FieldtypePageTitle","title":"Page Title","version":100,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"133":{"name":"FieldtypePassword","title":"Password","version":101,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"3":{"name":"FieldtypeText","title":"Text","version":100,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"1":{"name":"FieldtypeTextarea","title":"Textarea","version":106,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"135":{"name":"FieldtypeURL","title":"URL","version":101,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"25":{"name":"InputfieldAsmSelect","title":"asmSelect","version":120,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"131":{"name":"InputfieldButton","title":"Button","version":100,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"37":{"name":"InputfieldCheckbox","title":"Checkbox","version":104,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"38":{"name":"InputfieldCheckboxes","title":"Checkboxes","version":107,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"155":{"name":"InputfieldCKEditor","title":"CKEditor","version":157,"installs":["MarkupHTMLPurifier"],"created":1472954036,"namespace":"ProcessWire\\\\"},"94":{"name":"InputfieldDatetime","title":"Datetime","version":105,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"80":{"name":"InputfieldEmail","title":"Email","version":101,"created":1472954036,"namespace":"ProcessWire\\\\"},"78":{"name":"InputfieldFieldset","title":"Fieldset","version":101,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"55":{"name":"InputfieldFile","title":"Files","version":124,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"90":{"name":"InputfieldFloat","title":"Float","version":103,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"30":{"name":"InputfieldForm","title":"Form","version":107,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"40":{"name":"InputfieldHidden","title":"Hidden","version":101,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"161":{"name":"InputfieldIcon","title":"Icon","version":2,"created":1472954067,"namespace":"ProcessWire\\\\"},"56":{"name":"InputfieldImage","title":"Images","version":119,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"85":{"name":"InputfieldInteger","title":"Integer","version":104,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"79":{"name":"InputfieldMarkup","title":"Markup","version":102,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"41":{"name":"InputfieldName","title":"Name","version":100,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"60":{"name":"InputfieldPage","title":"Page","version":106,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true},"15":{"name":"InputfieldPageListSelect","title":"Page List Select","version":101,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"137":{"name":"InputfieldPageListSelectMultiple","title":"Page List Select Multiple","version":102,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"86":{"name":"InputfieldPageName","title":"Page Name","version":106,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true},"112":{"name":"InputfieldPageTitle","title":"Page Title","version":102,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"122":{"name":"InputfieldPassword","title":"Password","version":101,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"39":{"name":"InputfieldRadios","title":"Radio Buttons","version":105,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"36":{"name":"InputfieldSelect","title":"Select","version":102,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"43":{"name":"InputfieldSelectMultiple","title":"Select Multiple","version":101,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"149":{"name":"InputfieldSelector","title":"Selector","version":27,"autoload":"template=admin","created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\"},"32":{"name":"InputfieldSubmit","title":"Submit","version":102,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"34":{"name":"InputfieldText","title":"Text","version":106,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"35":{"name":"InputfieldTextarea","title":"Textarea","version":103,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"108":{"name":"InputfieldURL","title":"URL","version":102,"created":1472954036,"namespace":"ProcessWire\\\\"},"116":{"name":"JqueryCore","title":"jQuery Core","version":183,"singular":true,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"151":{"name":"JqueryMagnific","title":"jQuery Magnific Popup","version":1,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\"},"103":{"name":"JqueryTableSorter","title":"jQuery Table Sorter Plugin","version":221,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\"},"117":{"name":"JqueryUI","title":"jQuery UI","version":196,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"45":{"name":"JqueryWireTabs","title":"jQuery Wire Tabs Plugin","version":107,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true},"67":{"name":"MarkupAdminDataTable","title":"Admin Data Table","version":107,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"156":{"name":"MarkupHTMLPurifier","title":"HTML Purifier","version":105,"created":1472954036,"namespace":"ProcessWire\\\\"},"113":{"name":"MarkupPageArray","title":"PageArray Markup","version":100,"autoload":true,"singular":true,"created":1472954036,"namespace":"ProcessWire\\\\"},"98":{"name":"MarkupPagerNav","title":"Pager (Pagination) Navigation","version":104,"created":1472954036,"namespace":"ProcessWire\\\\"},"114":{"name":"PagePermissions","title":"Page Permissions","version":105,"autoload":true,"singular":true,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"115":{"name":"PageRender","title":"Page Render","version":105,"autoload":true,"singular":true,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true},"48":{"name":"ProcessField","title":"Fields","version":112,"icon":"cube","permission":"field-admin","created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true},"87":{"name":"ProcessHome","title":"Admin Home","version":101,"permission":"page-view","created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"76":{"name":"ProcessList","title":"List","version":101,"permission":"page-view","created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"160":{"name":"ProcessLogger","title":"Logs","version":1,"icon":"tree","permission":"logs-view","singular":1,"created":1472954067,"namespace":"ProcessWire\\\\","useNavJSON":true},"10":{"name":"ProcessLogin","title":"Login","version":103,"permission":"page-view","created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"50":{"name":"ProcessModule","title":"Modules","version":118,"permission":"module-admin","created":1472954036,"namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true,"nav":[{"url":"?site#tab_site_modules","label":"Site","icon":"plug","navJSON":"navJSON\\/?site=1"},{"url":"?core#tab_core_modules","label":"Core","icon":"plug","navJSON":"navJSON\\/?core=1"},{"url":"?configurable#tab_configurable_modules","label":"Configure","icon":"gear","navJSON":"navJSON\\/?configurable=1"},{"url":"?install#tab_install_modules","label":"Install","icon":"sign-in","navJSON":"navJSON\\/?install=1"},{"url":"?reset=1","label":"Refresh","icon":"refresh"}]},"17":{"name":"ProcessPageAdd","title":"Page Add","version":108,"icon":"plus-circle","permission":"page-edit","created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true},"7":{"name":"ProcessPageEdit","title":"Page Edit","version":108,"icon":"edit","permission":"page-edit","singular":1,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true},"129":{"name":"ProcessPageEditImageSelect","title":"Page Edit Image","version":120,"permission":"page-edit","singular":1,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true},"121":{"name":"ProcessPageEditLink","title":"Page Edit Link","version":108,"icon":"link","permission":"page-edit","singular":1,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true},"12":{"name":"ProcessPageList","title":"Page List","version":118,"icon":"sitemap","permission":"page-edit","created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true},"150":{"name":"ProcessPageLister","title":"Lister","version":24,"icon":"search","permission":"page-lister","created":1472954036,"configurable":true,"namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true},"104":{"name":"ProcessPageSearch","title":"Page Search","version":106,"permission":"page-edit","singular":1,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true},"14":{"name":"ProcessPageSort","title":"Page Sort and Move","version":100,"permission":"page-edit","created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"109":{"name":"ProcessPageTrash","title":"Page Trash","version":102,"singular":1,"created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"134":{"name":"ProcessPageType","title":"Page Type","version":101,"singular":1,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true},"83":{"name":"ProcessPageView","title":"Page View","version":104,"permission":"page-view","created":1472954036,"namespace":"ProcessWire\\\\","permanent":true},"136":{"name":"ProcessPermission","title":"Permissions","version":101,"icon":"gear","permission":"permission-admin","singular":1,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true},"138":{"name":"ProcessProfile","title":"User Profile","version":102,"permission":"profile-edit","singular":1,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true},"159":{"name":"ProcessRecentPages","title":"Recent Pages","version":2,"icon":"clock-o","permission":"page-edit-recent","singular":1,"created":1472954061,"namespace":"ProcessWire\\\\","useNavJSON":true,"nav":[{"url":"?edited=1","label":"Edited","icon":"users","navJSON":"navJSON\\/?edited=1"},{"url":"?added=1","label":"Created","icon":"users","navJSON":"navJSON\\/?added=1&me=1"},{"url":"?edited=1&me=1","label":"Edited by me","icon":"user","navJSON":"navJSON\\/?edited=1&me=1"},{"url":"?added=1&me=1","label":"Created by me","icon":"user","navJSON":"navJSON\\/?added=1&me=1"},{"url":"another\\/","label":"Add another","icon":"plus-circle","navJSON":"anotherNavJSON\\/"}]},"68":{"name":"ProcessRole","title":"Roles","version":103,"icon":"gears","permission":"role-admin","created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true},"47":{"name":"ProcessTemplate","title":"Templates","version":114,"icon":"cubes","permission":"template-admin","created":1472954036,"namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true},"66":{"name":"ProcessUser","title":"Users","version":107,"icon":"group","permission":"user-admin","created":1472954036,"configurable":"ProcessUserConfig.php","namespace":"ProcessWire\\\\","permanent":true,"useNavJSON":true},"125":{"name":"SessionLoginThrottle","title":"Session Login Throttle","version":102,"autoload":"function","singular":true,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\"},"139":{"name":"SystemUpdater","title":"System Updater","version":15,"singular":true,"created":1472954036,"configurable":3,"namespace":"ProcessWire\\\\","permanent":true},"61":{"name":"TextformatterEntities","title":"HTML Entity Encoder (htmlspecialchars)","version":100,"created":1472954036,"namespace":"ProcessWire\\\\"}}', '2010-04-08 03:10:10'),
+('FileCompiler__ea9b23cb383de5ca6f466aa26098cc67', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/home.php","hash":"ca1630e0a411f5bfeaa238f508aeac22","size":102,"time":1484572140,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/home.php","hash":"ca1630e0a411f5bfeaa238f508aeac22","size":102,"time":1484572140}}', '2010-04-08 03:10:10'),
 ('FileCompiler__cb136c5b3f2598e6f1365003650d4ab3', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/404.php","hash":"a8a6843d19f8d0c74b30dff7b57f4286","size":240,"time":1467868914,"ns":"\\\\"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/404.php","hash":"a6baa99386ad291ffb861f92403cbf84","size":417,"time":1467868914}}', '2010-04-08 03:10:10'),
 ('FileCompiler__dde7432d85e487f1eaca6cac9de2277d', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/rest\\/core\\/rest.php","hash":"2bde53116cdd212e7e344f7ab9d29140","size":1655,"time":1467868914,"ns":"Rest"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/rest\\/core\\/rest.php","hash":"2bde53116cdd212e7e344f7ab9d29140","size":1655,"time":1467868914}}', '2010-04-08 03:10:10'),
-('FileCompiler__ea9b23cb383de5ca6f466aa26098cc67', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/home.php","hash":"c0640fd467b28ec069221270e5de6264","size":102,"time":1472963253,"ns":"Processwire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/home.php","hash":"c0640fd467b28ec069221270e5de6264","size":102,"time":1472963253}}', '2010-04-08 03:10:10'),
-('FileCompiler__87dc7b58ad49805408bab85876a30364', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/_init.php","hash":"c75fcd5a22fe68d96be31c5bd3becf0f","size":931,"time":1480747672,"ns":"Processwire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/_init.php","hash":"c75fcd5a22fe68d96be31c5bd3becf0f","size":931,"time":1480747672}}', '2010-04-08 03:10:10'),
-('FileCompiler__66c84dd1aa509f9d740a1832f4250174', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/voices.php","hash":"644451e3b61869d3bb94fe2e44c9e4e4","size":5455,"time":1480738359,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/voices.php","hash":"644451e3b61869d3bb94fe2e44c9e4e4","size":5455,"time":1480738359}}', '2010-04-08 03:10:10'),
-('FileCompiler__a9e4cefd424935bf9d16529f89a34634', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/voice.php","hash":"3291d7b6ba97917382be3710d8acae46","size":1892,"time":1480747118,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/voice.php","hash":"3291d7b6ba97917382be3710d8acae46","size":1892,"time":1480747118}}', '2010-04-08 03:10:10');
-INSERT INTO `caches` (`name`, `data`, `expires`) VALUES
+('FileCompiler__66c84dd1aa509f9d740a1832f4250174', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/voices.php","hash":"c51fb92390f696aa68252d033209c85c","size":5482,"time":1480822809,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/voices.php","hash":"c51fb92390f696aa68252d033209c85c","size":5482,"time":1480822809}}', '2010-04-08 03:10:10'),
+('FileCompiler__a9e4cefd424935bf9d16529f89a34634', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/voice.php","hash":"3291d7b6ba97917382be3710d8acae46","size":1892,"time":1480747118,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/voice.php","hash":"3291d7b6ba97917382be3710d8acae46","size":1892,"time":1480747118}}', '2010-04-08 03:10:10'),
 ('FileCompiler__c367091cad40167de2059b0f2ddf365e', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/telegram-user.php","hash":"b890a412b060e1f02d7880c884d63ba6","size":1011,"time":1480745284,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/telegram-user.php","hash":"b890a412b060e1f02d7880c884d63ba6","size":1011,"time":1480745284}}', '2010-04-08 03:10:10');
+INSERT INTO `caches` (`name`, `data`, `expires`) VALUES
+('FileCompiler__87dc7b58ad49805408bab85876a30364', '{"source":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/templates\\/_init.php","hash":"052dc3ed2ebecdc99661669e9a314715","size":1006,"time":1484591206,"ns":"ProcessWire"},"target":{"file":"\\/Applications\\/MAMP\\/htdocs\\/voxgram\\/site\\/assets\\/cache\\/FileCompiler\\/site\\/templates\\/_init.php","hash":"052dc3ed2ebecdc99661669e9a314715","size":1006,"time":1484591206}}', '2010-04-08 03:10:10');
 
 -- --------------------------------------------------------
 
@@ -221,7 +221,7 @@ CREATE TABLE `field_email` (
 --
 
 INSERT INTO `field_email` (`pages_id`, `data`) VALUES
-(41, 'camilo@ninjas.cl');
+(41, 'admin@ninjas.com');
 
 -- --------------------------------------------------------
 
@@ -349,7 +349,10 @@ INSERT INTO `field_havepublicaccess` (`pages_id`, `data`) VALUES
 (1052, 1),
 (1053, 1),
 (1058, 1),
-(1059, 1);
+(1059, 1),
+(1063, 1),
+(1064, 1),
+(1065, 1);
 
 -- --------------------------------------------------------
 
@@ -368,7 +371,7 @@ CREATE TABLE `field_pass` (
 --
 
 INSERT INTO `field_pass` (`pages_id`, `data`, `salt`) VALUES
-(41, 'nAuCJNFI9UBY7CmHn/3oiy191Wxu.ee', '$2y$11$xvZA3P8vh.l0YfYAk7sfP.'),
+(41, 'J6qk70qV1nPAlw2gCSybuUh8H4Y4Z/6', '$2y$11$pgGHYKQB8ghWeGMwEbCxXe'),
 (40, '', '');
 
 -- --------------------------------------------------------
@@ -610,7 +613,7 @@ CREATE TABLE `field_totalvoicefiles` (
 --
 
 INSERT INTO `field_totalvoicefiles` (`pages_id`, `data`) VALUES
-(1017, 24);
+(1017, 27);
 
 -- --------------------------------------------------------
 
@@ -671,7 +674,10 @@ INSERT INTO `field_username` (`pages_id`, `data`) VALUES
 (1056, 'clsource'),
 (1057, 'clsource'),
 (1058, 'clsource'),
-(1059, 'clsource');
+(1059, 'clsource'),
+(1063, 'clsource'),
+(1064, 'clsource'),
+(1065, 'clsource');
 
 -- --------------------------------------------------------
 
@@ -831,7 +837,7 @@ INSERT INTO `pages` (`id`, `parent_id`, `templates_id`, `name`, `status`, `modif
 (36, 31, 5, 'page-view', 25, '2016-09-04 01:53:56', 41, '2016-09-04 01:53:56', 2, '2016-09-03 22:53:56', 0),
 (37, 30, 4, 'guest', 25, '2016-09-04 01:53:56', 41, '2016-09-04 01:53:56', 2, '2016-09-03 22:53:56', 0),
 (38, 30, 4, 'superuser', 25, '2016-09-04 01:53:56', 41, '2016-09-04 01:53:56', 2, '2016-09-03 22:53:56', 1),
-(41, 29, 3, 'ninja', 1, '2016-09-04 01:54:22', 40, '2016-09-04 01:53:56', 2, '2016-09-03 22:53:56', 0),
+(41, 29, 3, 'ninja', 1, '2017-01-16 18:26:50', 40, '2016-09-04 01:53:56', 2, '2016-09-03 22:53:56', 0),
 (40, 29, 3, 'guest', 25, '2016-09-04 01:53:56', 41, '2016-09-04 01:53:56', 2, '2016-09-03 22:53:56', 1),
 (50, 31, 5, 'page-sort', 25, '2016-09-04 01:53:56', 41, '2016-09-04 01:53:56', 41, '2016-09-03 22:53:56', 5),
 (51, 31, 5, 'page-template', 25, '2016-09-04 01:53:56', 41, '2016-09-04 01:53:56', 41, '2016-09-03 22:53:56', 6),
@@ -852,13 +858,13 @@ INSERT INTO `pages` (`id`, `parent_id`, `templates_id`, `name`, `status`, `modif
 (1014, 31, 5, 'logs-edit', 1, '2016-09-04 01:54:27', 40, '2016-09-04 01:54:27', 40, '2016-09-03 22:54:27', 12),
 (1015, 1, 44, 'voices', 1, '2016-09-04 02:06:55', 41, '2016-09-04 02:06:55', 41, '2016-09-03 23:06:55', 3),
 (1036, 7, 43, '1036.1031.2_asdasd23', 8193, '2016-11-24 00:59:50', 41, '2016-11-24 00:27:53', 40, '2016-11-23 21:27:53', 2),
-(1017, 1, 46, 'stats', 1, '2016-12-03 06:25:56', 40, '2016-09-04 05:14:29', 41, '2016-09-04 02:14:36', 4),
+(1017, 1, 46, 'stats', 1, '2016-12-04 02:15:51', 40, '2016-09-04 05:14:29', 41, '2016-09-04 02:14:36', 4),
 (1035, 7, 43, '1035.1031.1_asdf', 8193, '2016-11-24 00:59:46', 41, '2016-11-24 00:27:21', 40, '2016-11-23 21:27:21', 1),
 (1034, 7, 43, '1034.1031.0_clsource-caca', 8193, '2016-11-24 00:59:43', 41, '2016-11-23 23:37:33', 40, '2016-11-23 20:37:33', 0),
 (1033, 7, 43, '1033.1031.1_clsource-caca', 8193, '2016-11-23 23:36:53', 41, '2016-11-23 23:34:06', 40, '2016-11-23 20:34:06', 1),
 (1032, 7, 43, '1032.1031.0_clsource-asdf', 8193, '2016-11-23 23:36:49', 41, '2016-11-23 23:30:48', 40, '2016-11-23 20:30:48', 0),
 (1030, 7, 43, '1030.1015.2_clsource-asdf', 8193, '2016-11-23 23:30:14', 41, '2016-11-23 23:17:54', 40, '2016-11-23 20:17:54', 2),
-(1031, 1015, 47, 'clsource', 1, '2016-12-03 06:46:51', 40, '2016-11-23 23:30:48', 40, '2016-11-23 20:30:48', 1),
+(1031, 1015, 47, 'clsource', 1, '2016-12-04 02:15:51', 40, '2016-11-23 23:30:48', 40, '2016-11-23 20:30:48', 1),
 (1026, 7, 43, '1026.1015.0_clsource-kkk', 8193, '2016-11-23 22:56:22', 41, '2016-09-13 06:34:28', 40, '2016-09-13 03:34:28', 0),
 (1027, 7, 43, '1027.1015.1_clsource-caca', 8193, '2016-11-23 22:56:35', 41, '2016-11-23 22:38:18', 40, '2016-11-23 19:38:18', 1),
 (1028, 7, 43, '1028.1015.0_clsource-caca', 8193, '2016-11-23 23:33:01', 41, '2016-11-23 22:58:03', 40, '2016-11-23 19:58:03', 0),
@@ -885,7 +891,10 @@ INSERT INTO `pages` (`id`, `parent_id`, `templates_id`, `name`, `status`, `modif
 (1056, 7, 43, '1056.1031.1_4335', 8193, '2016-12-01 03:19:10', 41, '2016-12-01 03:17:42', 40, '2016-12-01 00:17:42', 1),
 (1057, 7, 43, '1057.1031.0_4335', 8193, '2016-12-01 03:50:12', 41, '2016-12-01 03:19:23', 40, '2016-12-01 00:19:23', 0),
 (1058, 7, 43, '1058.1031.1_yeah', 8193, '2016-12-01 03:50:17', 41, '2016-12-01 03:22:32', 40, '2016-12-01 00:22:32', 1),
-(1059, 7, 43, '1059.1031.2_1234', 8193, '2016-12-01 03:50:20', 41, '2016-12-01 03:26:58', 40, '2016-12-01 00:26:58', 2);
+(1059, 7, 43, '1059.1031.2_1234', 8193, '2016-12-01 03:50:20', 41, '2016-12-01 03:26:58', 40, '2016-12-01 00:26:58', 2),
+(1063, 1031, 43, '2016-12-03-23-09-11', 1, '2016-12-04 02:09:11', 40, '2016-12-04 02:09:11', 40, '2016-12-03 23:09:11', 0),
+(1064, 1031, 43, '2016-12-03-23-13-23', 1, '2016-12-04 02:13:23', 40, '2016-12-04 02:13:23', 40, '2016-12-03 23:13:23', 1),
+(1065, 1031, 43, '2016-12-03-23-15-51', 1, '2016-12-04 02:15:51', 40, '2016-12-04 02:15:51', 40, '2016-12-03 23:15:51', 2);
 
 -- --------------------------------------------------------
 
@@ -955,7 +964,10 @@ INSERT INTO `pages_access` (`pages_id`, `templates_id`, `ts`) VALUES
 (1056, 2, '2016-12-01 03:19:10'),
 (1057, 2, '2016-12-01 03:50:12'),
 (1058, 2, '2016-12-01 03:50:17'),
-(1059, 2, '2016-12-01 03:50:20');
+(1059, 2, '2016-12-01 03:50:20'),
+(1063, 1, '2016-12-04 02:09:11'),
+(1064, 1, '2016-12-04 02:13:23'),
+(1065, 1, '2016-12-04 02:15:51');
 
 -- --------------------------------------------------------
 
@@ -1019,7 +1031,7 @@ CREATE TABLE `session_login_throttle` (
 --
 
 INSERT INTO `session_login_throttle` (`name`, `attempts`, `last_attempt`) VALUES
-('ninja', 1, 1480746520);
+('ninja', 1, 1484591215);
 
 -- --------------------------------------------------------
 
@@ -1045,11 +1057,11 @@ INSERT INTO `templates` (`id`, `name`, `fieldgroups_id`, `flags`, `cache_time`, 
 (3, 'user', 3, 8, 0, '{"useRoles":1,"noChildren":1,"parentTemplates":[2],"slashUrls":1,"pageClass":"User","noGlobal":1,"noMove":1,"noTrash":1,"noSettings":1,"noChangeTemplate":1,"nameContentTab":1}'),
 (4, 'role', 4, 8, 0, '{"noChildren":1,"parentTemplates":[2],"slashUrls":1,"pageClass":"Role","noGlobal":1,"noMove":1,"noTrash":1,"noSettings":1,"noChangeTemplate":1,"nameContentTab":1}'),
 (5, 'permission', 5, 8, 0, '{"noChildren":1,"parentTemplates":[2],"slashUrls":1,"guestSearchable":1,"pageClass":"Permission","noGlobal":1,"noMove":1,"noTrash":1,"noSettings":1,"noChangeTemplate":1,"nameContentTab":1}'),
-(1, 'home', 1, 0, 0, '{"useRoles":1,"noParents":1,"slashUrls":1,"pageLabelField":"fa-home title","compile":3,"modified":1472966179,"ns":"Processwire","roles":[37]}'),
+(1, 'home', 1, 0, 0, '{"useRoles":1,"noParents":1,"slashUrls":1,"pageLabelField":"fa-home title","compile":3,"modified":1484572140,"ns":"ProcessWire","roles":[37]}'),
 (47, 'telegram-user', 101, 0, 0, '{"childTemplates":[43],"parentTemplates":[44],"slashUrls":1,"pageLabelField":"fa-user title","compile":3,"modified":1480745284,"ns":"ProcessWire"}'),
 (43, 'voice', 97, 0, 0, '{"noChildren":1,"parentTemplates":[44,47],"slashUrls":1,"pageLabelField":"fa-volume-up title","noMove":1,"noChangeTemplate":1,"compile":3,"tags":"voice","modified":1480747118,"ns":"ProcessWire"}'),
-(44, 'voices', 98, 0, 0, '{"noParents":-1,"childTemplates":[43,47],"parentTemplates":[1],"allowPageNum":1,"slashUrls":1,"pageLabelField":"fa-volume-up title","noMove":1,"noChangeTemplate":1,"compile":3,"tags":"voice","modified":1480738359,"ns":"ProcessWire"}'),
-(45, '404', 99, 0, 0, '{"noChildren":1,"noParents":-1,"parentTemplates":[1],"slashUrls":1,"pageLabelField":"fa-exclamation-circle title","compile":3,"modified":1472966113,"ns":"\\\\"}'),
+(44, 'voices', 98, 0, 0, '{"noParents":-1,"childTemplates":[43,47],"parentTemplates":[1],"allowPageNum":1,"slashUrls":1,"pageLabelField":"fa-volume-up title","noMove":1,"noChangeTemplate":1,"compile":3,"tags":"voice","modified":1480876072,"ns":"ProcessWire"}'),
+(45, '404', 99, 0, 0, '{"noChildren":1,"noParents":-1,"parentTemplates":[1],"slashUrls":1,"pageLabelField":"fa-exclamation-circle title","compile":3,"modified":1484572158,"ns":"ProcessWire"}'),
 (46, 'stats', 100, 0, 0, '{"noChildren":1,"noParents":-1,"parentTemplates":[1],"slashUrls":1,"pageLabelField":"fa-area-chart title","noMove":1,"noChangeTemplate":1,"compile":3,"tags":"stats","modified":1472966056}');
 
 --
@@ -1266,7 +1278,7 @@ ALTER TABLE `modules`
 -- AUTO_INCREMENT de la tabla `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1063;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1066;
 --
 -- AUTO_INCREMENT de la tabla `templates`
 --
