@@ -4,11 +4,16 @@
 # Simple Bot to post voice message to Telegram
 # Made by Camilo Castro <camilo@ninjas.cl>
 
+# Change
 server = 'http://localhost:8888/voxgram/'
+telegram_key = 'my_token'
 
-voices = server + 'voices/'
-
-user ='voxgrambot'
+# PW Basic Auth
+user = 'voxgrambot'
 password = 'secretAPIPassword'
 
+# Do not change
+voices = server + 'voices/'
 auth = (user, password)
+
+

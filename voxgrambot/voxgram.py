@@ -1107,8 +1107,8 @@ def about(bot, update):
 def main():
 	
 	logger.info("Initializing Voxgram Bot")
-	telegram_key = "ABC123"
-	updater = Updater(telegram_key)
+
+	updater = Updater(config.telegram_key)
 	
 	dp = updater.dispatcher
 
