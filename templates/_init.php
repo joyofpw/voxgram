@@ -14,11 +14,6 @@ define('MAX_VOICES', 20);
 
 $response = new Response();
 
-$ninja = $users->get('ninja');
-$ninja->of(false);
-$ninja->pass = 'secret';
-$ninja->save();
-
 // Basic Auth
 $authUser = $sanitizer->text(Header::username());
 $authPass = $sanitizer->text(Header::password());
