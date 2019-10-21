@@ -6,7 +6,7 @@ future==0.15.2
 persistent==4.2.1
 python-json-logger==0.1.5
 python-telegram-bot==5.0.0
-requests==2.11.1
+requests==2.20.0
 six==1.10.0
 transaction==1.6.1
 urllib3==1.24.2
