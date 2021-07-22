@@ -40,6 +40,10 @@ Go to */voxgrambot/* and execute.
 
 If all is good then you can now chat with your bot and save you audio files inside the ProcessWire Backend.
 
+## Related
+
+- https://mauricius.dev/manage-content-in-a-processwire-website-using-telegram/
+
 ## Licence
 [MIT](LICENSE)
 
