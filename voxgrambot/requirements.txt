@@ -1,5 +1,5 @@
 BTrees==4.3.1
-certifi==2016.8.31
+certifi==2022.12.7
 emoji==0.3.9
 ExtensionClass==4.1.2
 future==0.15.2
